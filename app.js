@@ -993,61 +993,35 @@ const cartinhas = [
 	  }
 	];
 
-const modalBtn1 = document.querySelector('.card1');
-const tarottest1 = document.getElementById('tarot1');
-const modalBtn2 = document.querySelector('.card2');
-const tarottest2 = document.getElementById('tarot2');
-const modalBtn3 = document.querySelector('.card3');
-const tarottest3 = document.getElementById('tarot3');
-const modalBtn4 = document.querySelector('.card4');
-const tarottest4 = document.getElementById('tarot4');
-const modalBtn5 = document.querySelector('.card5');
-const tarottest5 = document.getElementById('tarot5');
-
-let a = Math.floor(Math.random() * cartinhas.length);
-let	b = Math.floor(Math.random() * cartinhas.length);
-let	c = Math.floor(Math.random() * cartinhas.length);
-let	d = Math.floor(Math.random() * cartinhas.length);
-let	e = Math.floor(Math.random() * cartinhas.length);
-
-
-modalBtn1.addEventListener("click", function() {
-	document.getElementById('p1').innerHTML = cartinhas[a].desc;
-	document.getElementById('img1').src = cartinhas[a].src;
-	document.getElementById('tarot1').id = 'tarozinho1';
-
+// Criar functions pra cada ação ajuda a organizar o código e deixá-lo mais legível
+function addListeners() {
+	// Evitar colocar números mágicos evita que o código fique confuso
+	// Colocar apenas o número "5" no for loop deixa o número sem muito contexto 
+	const btnsTotal = 5;
 	
+	// Aqui vamos percorrer de 1 a 5, que é o número de botões que teremos
+	for(var i = 1; i <= btnsTotal; i++) {
+		// Utilizamos a variável i para saber em que posição do for loop estamos
+		const modalBtn = document.querySelector('.card' + i);
+		const tarottest = document.getElementById('tarot' + i);
+		
+		// Dar um nome significativo para suas variáveis ajuda o seu eu futuro a saber
+		// ler ser próprio código kkkkkk
+		const randomIndex = Math.floor(Math.random() * cartinhas.length);
+		modalBtn.addEventListener("click", function() {
+			document.getElementById('p' + i).innerHTML = cartinhas[randomIndex].desc;
+			document.getElementById('img' + i).src = cartinhas[randomIndex].src;
+			document.getElementById('tarot' + i).id = 'tarozinho' + i;
+			console.log(randomIndex, tarottest);
+		});
+	}
+}
 
-	console.log(a, tarottest1);
-})
-
-modalBtn2.addEventListener("click", function() {
-	document.getElementById('p2').innerHTML = cartinhas[b].desc;
-	document.getElementById('img2').src = cartinhas[b].src;
-	document.getElementById('tarot2').id = 'tarozinho2';
-	console.log(b, tarottest2);
-})
-
-modalBtn3.addEventListener("click", function() {
-	document.getElementById('p3').innerHTML = cartinhas[c].desc;
-	document.getElementById('img3').src = cartinhas[c].src;
-	document.getElementById('tarot3').id = 'tarozinho3';
-	console.log(c, tarottest3);
-})
-
-modalBtn4.addEventListener("click", function() {
-	document.getElementById('p4').innerHTML = cartinhas[d].desc;
-	document.getElementById('img4').src = cartinhas[d].src;
-	document.getElementById('tarot4').id = 'tarozinho4';
-	console.log(d, tarottest4);
-})
-
-modalBtn5.addEventListener("click", function() {
-	document.getElementById('p5').innerHTML = cartinhas[e].desc;
-	document.getElementById('img5').src = cartinhas[e].src;
-	document.getElementById('tarot5').id = 'tarozinho5';
-	console.log(e, tarottest5);
-})
+// Iniciar as ações no evento onload da janela permite que a página seja carregada
+// antes de iniciar as ações, evitando que as ações aconteçam antes da página ser carregada
+window.onload = function(e){
+	addListeners();
+}
 
 
 //  window.addEventListener("DOMContentLoaded", function(){
