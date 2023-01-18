@@ -1,0 +1,33 @@
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+.container img {
+  float: right;
+  width: 25%;
+}
+
+.container p {
+  float: left;
+  margin: 10px;
+}
+
+button {
+width: 95%;
+margin: 1%;
+}
+
+h2 {
+  text-align: center;
+}
+
+#tarot1,#tarot2, #tarot3, #tarot4, #tarot5  {
+  display: none;
+}
+
+#tarozinho1, #tarozinho2, #tarozinho3, #tarozinho4, #tarozinho5 {
+
+};

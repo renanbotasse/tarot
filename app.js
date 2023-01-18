@@ -1,7 +1,7 @@
-const cards = [
+const cartinhas = [
 	  {
 		"id": 1,
-		"img": "./01_Magican",
+		"src": "./deck/01_Magician.jpg",
 		"type": "major",
 		"name_short": "ar01",
 		"name": "The Magician",
@@ -13,6 +13,7 @@ const cards = [
 	  },
 	  {
 		"id": 2,
+		"src": "./deck/02_High_Priestess.jpg",
 		"type": "major",
 		"name_short": "ar02",
 		"name": "The High Priestess",
@@ -24,6 +25,7 @@ const cards = [
 	  },
 	  {
 		"id": 3,
+		"src": "./deck/03_Empress.jpg",
 		"type": "major",
 		"name_short": "ar03",
 		"name": "The Empress",
@@ -35,6 +37,7 @@ const cards = [
 	  },
 	  {
 		"id": 4,
+		"src": "./deck/04_Emperor.jpg",
 		"type": "major",
 		"name_short": "ar04",
 		"name": "The Emperor",
@@ -46,6 +49,7 @@ const cards = [
 	  },
 	  {
 		"id": 5,
+		"src": "./deck/05_Hierophant.jpg",
 		"type": "major",
 		"name_short": "ar05",
 		"name": "The Hierophant",
@@ -57,6 +61,7 @@ const cards = [
 	  },
 	  {
 		"id": 6,
+		"src": "./deck/06_Lovers.jpg",
 		"type": "major",
 		"name_short": "ar06",
 		"name": "The Lovers",
@@ -68,6 +73,7 @@ const cards = [
 	  },
 	  {
 		"id": 7,
+		"src": "./deck/07_Chariot.jpg",
 		"type": "major",
 		"name_short": "ar07",
 		"name": "The Chariot",
@@ -79,6 +85,7 @@ const cards = [
 	  },
 	  {
 		"id": 8,
+		"src": "./deck/08_Fortitude.jpg",
 		"type": "major",
 		"name_short": "ar08",
 		"name": "Fortitude",
@@ -90,6 +97,7 @@ const cards = [
 	  },
 	  {
 		"id": 9,
+		"src": "./deck/09_Hermit.jpg",
 		"type": "major",
 		"name_short": "ar09",
 		"name": "The Hermit",
@@ -101,6 +109,7 @@ const cards = [
 	  },
 	  {
 		"id": 10,
+		"src": "./deck/10_Wheel_of_Fortune.jpg",
 		"type": "major",
 		"name_short": "ar10",
 		"name": "Wheel Of Fortune",
@@ -112,6 +121,7 @@ const cards = [
 	  },
 	  {
 		"id": 11,
+		"src": "./deck/11_Justice.jpg",
 		"type": "major",
 		"name_short": "ar11",
 		"name": "Justice",
@@ -123,6 +133,7 @@ const cards = [
 	  },
 	  {
 		"id": 12,
+		"src": "./deck/12_Hanged_Man.jpg",
 		"type": "major",
 		"name_short": "ar12",
 		"name": "The Hanged Man",
@@ -134,6 +145,7 @@ const cards = [
 	  },
 	  {
 		"id": 13,
+		"src": "./deck/13_Death.jpg",
 		"type": "major",
 		"name_short": "ar13",
 		"name": "Death",
@@ -145,6 +157,7 @@ const cards = [
 	  },
 	  {
 		"id": 14,
+		"src": "./deck/14_Temperance.jpg",
 		"type": "major",
 		"name_short": "ar14",
 		"name": "Temperance",
@@ -156,6 +169,7 @@ const cards = [
 	  },
 	  {
 		"id": 15,
+		"src": "./deck/15_Devil.jpg",
 		"type": "major",
 		"name_short": "ar15",
 		"name": "The Devil",
@@ -167,6 +181,7 @@ const cards = [
 	  },
 	  {
 		"id": 16,
+		"src": "./deck/16_Tower.jpg",
 		"type": "major",
 		"name_short": "ar16",
 		"name": "The Tower",
@@ -178,6 +193,7 @@ const cards = [
 	  },
 	  {
 		"id": 17,
+		"src": "./deck/17_Star.jpg",
 		"type": "major",
 		"name_short": "ar17",
 		"name": "The Star",
@@ -189,6 +205,7 @@ const cards = [
 	  },
 	  {
 		"id": 18,
+		"src": "./deck/18_Moon.jpg",
 		"type": "major",
 		"name_short": "ar18",
 		"name": "The Moon",
@@ -200,6 +217,7 @@ const cards = [
 	  },
 	  {
 		"id": 19,
+		"src": "./deck/19_Sun.jpg",
 		"type": "major",
 		"name_short": "ar19",
 		"name": "The Sun",
@@ -211,6 +229,7 @@ const cards = [
 	  },
 	  {
 		"id": 20,
+		"src": "./deck/20_Judgement.jpg",
 		"type": "major",
 		"name_short": "ar20",
 		"name": "The Last Judgment",
@@ -222,6 +241,7 @@ const cards = [
 	  },
 	  {
 		"id": 21,
+		"src": "./deck/00_Fool.jpg",
 		"type": "major",
 		"name_short": "ar00",
 		"name": "The Fool",
@@ -233,6 +253,7 @@ const cards = [
 	  },
 	  {
 		"id": 22,
+		"src": "./deck/21_World.jpg",
 		"type": "major",
 		"name_short": "ar21",
 		"name": "The World",
@@ -244,6 +265,7 @@ const cards = [
 	  },
 	  {
 		"id": 23,
+		"src": "./deck/32_Page_of_Wands.jpg",
 		"name": "Page of Wands",
 		"name_short": "wapa",
 		"value": "page",
@@ -256,6 +278,7 @@ const cards = [
 	  },
 	  {
 		"id": 24,
+		"src": "./deck/33_Knight_of_Wands.jpg",
 		"name": "Knight of Wands",
 		"name_short": "wakn",
 		"value": "knight",
@@ -268,6 +291,7 @@ const cards = [
 	  },
 	  {
 		"id": 25,
+		"src": "./deck/34_Queen_of_Wands.jpg",
 		"name": "Queen of Wands",
 		"name_short": "waqu",
 		"value": "queen",
@@ -280,6 +304,7 @@ const cards = [
 	  },
 	  {
 		"id": 26,
+		"src": "./deck/35_King_of_Wands.jpg",
 		"name": "King of Wands",
 		"name_short": "waki",
 		"value": "king",
@@ -292,6 +317,7 @@ const cards = [
 	  },
 	  {
 		"id": 27,
+		"src": "./deck/22_Ace_of_Wands.jpg",
 		"name": "Ace of Wands",
 		"name_short": "waac",
 		"value": "ace",
@@ -304,6 +330,7 @@ const cards = [
 	  },
 	  {
 		"id": 28,
+		"src": "./deck/23_Two_of_Wands.jpg",
 		"name": "Two of Wands",
 		"name_short": "wa02",
 		"value": "two",
@@ -316,6 +343,7 @@ const cards = [
 	  },
 	  {
 		"id": 29,
+		"src": "./deck/24_Three_of_Wands.jpg",
 		"name": "Three of Wands",
 		"name_short": "wa03",
 		"value": "three",
@@ -328,6 +356,7 @@ const cards = [
 	  },
 	  {
 		"id": 30,
+		"src": "./deck/25_Four_of_Wands.jpg",
 		"name": "Four of Wands",
 		"name_short": "wa04",
 		"value": "four",
@@ -340,6 +369,7 @@ const cards = [
 	  },
 	  {
 		"id": 31,
+		"src": "./deck/26_Five_of_Wands.jpg",
 		"name": "Five of Wands",
 		"name_short": "wa05",
 		"value": "five",
@@ -352,6 +382,7 @@ const cards = [
 	  },
 	  {
 		"id": 32,
+		"src": "./deck/27_Six_of_Wands.jpg",
 		"name": "Six of Wands",
 		"name_short": "wa06",
 		"value": "six",
@@ -364,6 +395,7 @@ const cards = [
 	  },
 	  {
 		"id": 33,
+		"src": "./deck/28_Seven_of_Wands.jpg",
 		"name": "Seven of Wands",
 		"name_short": "wa07",
 		"value": "seven",
@@ -376,6 +408,7 @@ const cards = [
 	  },
 	  {
 		"id": 34,
+		"src": "./deck/29_Eight_of_Wands.jpg",
 		"name": "Eight of Wands",
 		"name_short": "wa08",
 		"value": "eight",
@@ -388,6 +421,7 @@ const cards = [
 	  },
 	  {
 		"id": 35,
+		"src": "./deck/30_Nine_of_Wands.jpg",
 		"name": "Nine of Wands",
 		"name_short": "wa09",
 		"value": "nine",
@@ -400,6 +434,7 @@ const cards = [
 	  },
 	  {
 		"id": 36,
+		"src": "./deck/31_Ten_of_Wands.jpg",
 		"name": "Ten of Wands",
 		"name_short": "wa10",
 		"value": "ten",
@@ -412,6 +447,7 @@ const cards = [
 	  },
 	  {
 		"id": 37,
+		"src": "./deck/60_Page_of_Cups.jpg",
 		"name": "Page of Cups",
 		"name_short": "cupa",
 		"value": "page",
@@ -424,6 +460,7 @@ const cards = [
 	  },
 	  {
 		"id": 38,
+		"src": "./deck/61_Knight_of_Cups.jpg",
 		"name": "Knight of Cups",
 		"name_short": "cukn",
 		"value": "knight",
@@ -436,6 +473,7 @@ const cards = [
 	  },
 	  {
 		"id": 39,
+		"src": "./deck/62_Queen_of_Cups.jpg",
 		"name": "Queen of Cups",
 		"name_short": "cuqu",
 		"value": "queen",
@@ -448,6 +486,7 @@ const cards = [
 	  },
 	  {
 		"id": 40,
+		"src": "./deck/63_King_of_Cups.jpg",
 		"name": "King of Cups",
 		"name_short": "cuki",
 		"value": "king",
@@ -460,6 +499,7 @@ const cards = [
 	  },
 	  {
 		"id": 41,
+		"src": "./deck/50_Ace_of_Cups.jpg",
 		"name": "Ace of Cups",
 		"name_short": "cuac",
 		"value": "ace",
@@ -472,6 +512,7 @@ const cards = [
 	  },
 	  {
 		"id": 42,
+		"src": "./deck/51_Two_of_Cups.jpg",
 		"name": "Two of Cups",
 		"name_short": "cu02",
 		"value": "two",
@@ -484,6 +525,7 @@ const cards = [
 	  },
 	  {
 		"id": 43,
+		"src": "./deck/52_Three_of_Cups.jpg",
 		"name": "Three of Cups",
 		"name_short": "cu03",
 		"value": "three",
@@ -496,6 +538,7 @@ const cards = [
 	  },
 	  {
 		"id": 44,
+		"src": "./deck/53_Four_of_Cups.jpg",
 		"name": "Four of Cups",
 		"name_short": "cu04",
 		"value": "four",
@@ -508,6 +551,7 @@ const cards = [
 	  },
 	  {
 		"id": 45,
+		"src": "./deck/54_Five_of_Cups.jpg",
 		"name": "Five of Cups",
 		"name_short": "cu05",
 		"value": "five",
@@ -520,6 +564,7 @@ const cards = [
 	  },
 	  {
 		"id": 46,
+		"src": "./deck/55_Six_of_Cups.jpg",
 		"name": "Six of Cups",
 		"name_short": "cu06",
 		"value": "six",
@@ -532,6 +577,7 @@ const cards = [
 	  },
 	  {
 		"id": 47,
+		"src": "./deck/56_Seven_of_Cups.jpg",
 		"name": "Seven of Cups",
 		"name_short": "cu07",
 		"value": "seven",
@@ -544,6 +590,7 @@ const cards = [
 	  },
 	  {
 		"id": 48,
+		"src": "./deck/57_Eight_of_Cups.jpg",
 		"name": "Eight of Cups",
 		"name_short": "cu08",
 		"value": "eight",
@@ -556,6 +603,7 @@ const cards = [
 	  },
 	  {
 		"id": 49,
+		"src": "./deck/58_Nine_of_Cups.jpg",
 		"name": "Nine of Cups",
 		"name_short": "cu09",
 		"value": "nine",
@@ -568,6 +616,7 @@ const cards = [
 	  },
 	  {
 		"id": 50,
+		"src": "./deck/59_Ten_of_Cups.jpg",
 		"name": "Ten of Cups",
 		"name_short": "cu10",
 		"value": "ten",
@@ -580,6 +629,7 @@ const cards = [
 	  },
 	  {
 		"id": 51,
+		"src": "./deck/46_Page_of_Pentacles.jpg",
 		"name": "Page of Pentacles",
 		"name_short": "pepa",
 		"value": "page",
@@ -592,6 +642,7 @@ const cards = [
 	  },
 	  {
 		"id": 52,
+		"src": "./deck/47_Knight_of_Pentacles.jpg",
 		"name": "Knight of Pentacles",
 		"name_short": "pekn",
 		"value": "knight",
@@ -604,6 +655,7 @@ const cards = [
 	  },
 	  {
 		"id": 53,
+		"src": "./deck/48_Queen_of_Pentacles.jpg",
 		"name": "Queen of Pentacles",
 		"name_short": "pequ",
 		"value": "queen",
@@ -616,6 +668,7 @@ const cards = [
 	  },
 	  {
 		"id": 54,
+		"src": "./deck/49_King_of_Pentacles.jpg",
 		"name": "King of Pentacles",
 		"name_short": "peki",
 		"value": "king",
@@ -628,6 +681,7 @@ const cards = [
 	  },
 	  {
 		"id": 55,
+		"src": "./deck/36_Ace_of_Pentacles.jpg",
 		"name": "Ace of Pentacles",
 		"name_short": "peac",
 		"value": "ace",
@@ -640,6 +694,7 @@ const cards = [
 	  },
 	  {
 		"id": 56,
+		"src": "./deck/37_Two_of_Pentacles.jpg",
 		"name": "Two of Pentacles",
 		"name_short": "pe02",
 		"value": "two",
@@ -652,6 +707,7 @@ const cards = [
 	  },
 	  {
 		"id": 57,
+		"src": "./deck/38_Three_of_Pentacles.jpg",
 		"name": "Three of Pentacles",
 		"name_short": "pe03",
 		"value": "three",
@@ -664,6 +720,7 @@ const cards = [
 	  },
 	  {
 		"id": 58,
+		"src": "./deck/39_Four_of_Pentacles.jpg",
 		"name": "Four of Pentacles",
 		"name_short": "pe04",
 		"value": "four",
@@ -676,6 +733,7 @@ const cards = [
 	  },
 	  {
 		"id": 59,
+		"src": "./deck/40_Five_of_Pentacles.jpg",
 		"name": "Five of Pentacles",
 		"name_short": "pe05",
 		"value": "five",
@@ -688,6 +746,7 @@ const cards = [
 	  },
 	  {
 		"id": 60,
+		"src": "./deck/41_Six_of_Pentacles.jpg",
 		"name": "Six of Pentacles",
 		"name_short": "pe06",
 		"value": "six",
@@ -700,6 +759,7 @@ const cards = [
 	  },
 	  {
 		"id": 61,
+		"src": "./deck/42_Seven_of_Pentacles.jpg",
 		"name": "Seven of Pentacles",
 		"name_short": "pe07",
 		"value": "seven",
@@ -712,6 +772,7 @@ const cards = [
 	  },
 	  {
 		"id": 62,
+		"src": "./deck/43_Eight_of_Pentacles.jpg",
 		"name": "Eight of Pentacles",
 		"name_short": "pe08",
 		"value": "eight",
@@ -724,6 +785,7 @@ const cards = [
 	  },
 	  {
 		"id": 63,
+		"src": "./deck/44_Nine_of_Pentacles.jpg",
 		"name": "Nine of Pentacles",
 		"name_short": "pe09",
 		"value": "nine",
@@ -736,6 +798,7 @@ const cards = [
 	  },
 	  {
 		"id": 64,
+		"src": "./deck/45_Ten_of_Pentacles.jpg",
 		"name": "Ten of Pentacles",
 		"name_short": "pe10",
 		"value": "ten",
@@ -748,6 +811,7 @@ const cards = [
 	  },
 	  {
 		"id": 65,
+		"src": "./deck/74_Page_of_Swords.jpg",
 		"name": "Page of Swords",
 		"name_short": "swpa",
 		"value": "page",
@@ -760,6 +824,7 @@ const cards = [
 	  },
 	  {
 		"id": 66,
+		"src": "./deck/75_Knight_of_Swords.jpg",
 		"name": "Knight of Swords",
 		"name_short": "swkn",
 		"value": "knight",
@@ -772,6 +837,7 @@ const cards = [
 	  },
 	  {
 		"id": 67,
+		"src": "./deck/76_Queen_of_Swords.jpg",
 		"name": "Queen of Swords",
 		"name_short": "swqu",
 		"value": "queen",
@@ -784,6 +850,7 @@ const cards = [
 	  },
 	  {
 		"id": 68,
+		"src": "./deck/77_King_of_Swords.jpg",
 		"name": "King of Swords",
 		"name_short": "swki",
 		"value": "king",
@@ -796,6 +863,7 @@ const cards = [
 	  },
 	  {
 		"id": 69,
+		"src": "./deck/64_Ace_of_Swords.jpg",
 		"name": "Ace of Swords",
 		"name_short": "swac",
 		"value": "ace",
@@ -808,6 +876,7 @@ const cards = [
 	  },
 	  {
 		"id": 70,
+		"src": "./deck/65_Two_of_Swords.jpg",
 		"name": "Two of Swords",
 		"name_short": "sw02",
 		"value": "two",
@@ -820,6 +889,7 @@ const cards = [
 	  },
 	  {
 		"id": 71,
+		"src": "./deck/66_Three_of_Swords.jpg",
 		"name": "Three of Swords",
 		"name_short": "sw03",
 		"value": "three",
@@ -832,6 +902,7 @@ const cards = [
 	  },
 	  {
 		"id": 72,
+		"src": "./deck/67_Four_of_Swords.jpg",
 		"name": "Four of Swords",
 		"name_short": "sw04",
 		"value": "four",
@@ -844,6 +915,7 @@ const cards = [
 	  },
 	  {
 		"id": 73,
+		"src": "./deck/68_Five_of_Swords.jpg",
 		"name": "Five of Swords",
 		"name_short": "sw05",
 		"value": "five",
@@ -856,6 +928,7 @@ const cards = [
 	  },
 	  {
 		"id": 74,
+		"src": "./deck/69_Six_of_Swords.jpg",
 		"name": "Six of Swords",
 		"name_short": "sw06",
 		"value": "six",
@@ -868,6 +941,7 @@ const cards = [
 	  },
 	  {
 		"id": 75,
+		"src": "./deck/70_Seven_of_Swords.jpg",
 		"name": "Seven of Swords",
 		"name_short": "sw07",
 		"value": "seven",
@@ -880,6 +954,7 @@ const cards = [
 	  },
 	  {
 		"id": 76,
+		"src": "./deck/71_Eight_of_Swords.jpg",
 		"name": "Eight of Swords",
 		"name_short": "sw08",
 		"value": "eight",
@@ -892,6 +967,7 @@ const cards = [
 	  },
 	  {
 		"id": 77,
+		"src": "./deck/72_Nine_of_Swords.jpg",
 		"name": "Nine of Swords",
 		"name_short": "sw09",
 		"value": "nine",
@@ -904,6 +980,7 @@ const cards = [
 	  },
 	  {
 		"id": 78,
+		"src": "./deck/73_Ten_of_Swords.jpg",
 		"name": "Ten of Swords",
 		"name_short": "sw10",
 		"value": "ten",
@@ -915,3 +992,81 @@ const cards = [
 		"desc": "A prostrate figure, pierced by all the swords belonging to the card."
 	  }
 	];
+
+const modalBtn1 = document.querySelector('.card1');
+const tarottest1 = document.getElementById('tarot1');
+const modalBtn2 = document.querySelector('.card2');
+const tarottest2 = document.getElementById('tarot2');
+const modalBtn3 = document.querySelector('.card3');
+const tarottest3 = document.getElementById('tarot3');
+const modalBtn4 = document.querySelector('.card4');
+const tarottest4 = document.getElementById('tarot4');
+const modalBtn5 = document.querySelector('.card5');
+const tarottest5 = document.getElementById('tarot5');
+
+let a = Math.floor(Math.random() * cartinhas.length);
+let	b = Math.floor(Math.random() * cartinhas.length);
+let	c = Math.floor(Math.random() * cartinhas.length);
+let	d = Math.floor(Math.random() * cartinhas.length);
+let	e = Math.floor(Math.random() * cartinhas.length);
+
+
+modalBtn1.addEventListener("click", function() {
+	document.getElementById('p1').innerHTML = cartinhas[a].desc;
+	document.getElementById('img1').src = cartinhas[a].src;
+	document.getElementById('tarot1').id = 'tarozinho1';
+
+	
+
+	console.log(a, tarottest1);
+})
+
+modalBtn2.addEventListener("click", function() {
+	document.getElementById('p2').innerHTML = cartinhas[b].desc;
+	document.getElementById('img2').src = cartinhas[b].src;
+	document.getElementById('tarot2').id = 'tarozinho2';
+	console.log(b, tarottest2);
+})
+
+modalBtn3.addEventListener("click", function() {
+	document.getElementById('p3').innerHTML = cartinhas[c].desc;
+	document.getElementById('img3').src = cartinhas[c].src;
+	document.getElementById('tarot3').id = 'tarozinho3';
+	console.log(c, tarottest3);
+})
+
+modalBtn4.addEventListener("click", function() {
+	document.getElementById('p4').innerHTML = cartinhas[d].desc;
+	document.getElementById('img4').src = cartinhas[d].src;
+	document.getElementById('tarot4').id = 'tarozinho4';
+	console.log(d, tarottest4);
+})
+
+modalBtn5.addEventListener("click", function() {
+	document.getElementById('p5').innerHTML = cartinhas[e].desc;
+	document.getElementById('img5').src = cartinhas[e].src;
+	document.getElementById('tarot5').id = 'tarozinho5';
+	console.log(e, tarottest5);
+})
+
+
+//  window.addEventListener("DOMContentLoaded", function(){
+// 	let array;
+// 	array[0] = Math.floor(Math.random() * cartinhas.length);
+// 	array[1] = Math.floor(Math.random() * cartinhas.length);
+// 	array[2] = Math.floor(Math.random() * cartinhas.length);
+// 	array[3] = Math.floor(Math.random() * cartinhas.length);
+// 	array[4] = Math.floor(Math.random() * cartinhas.length);
+// 	console.log(array);
+// 	// playcard(currentItem);
+//  }
+ function playcard(carta) {
+	const item = cartinhas[carta];
+	desc.textContent = item.desc;
+ }
+
+
+
+//COMANDO QUE SUBSTITUI A IMAGEM
+
+//COMANDO QUE SUBSTITUI O TEXTO
