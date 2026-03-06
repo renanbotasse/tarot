@@ -7,382 +7,515 @@ export const CARDS: TarotCard[] = [
   {
     id: "00-the-fool",
     name: "The Fool",
+    namePt: "O Louco",
     image: "/cards/00-TheFool.png",
     arcana: "major",
     number: 0,
     romanNumeral: "0",
     uprightMeaning:
       "New beginnings, innocence, spontaneity, a free spirit. The Fool leaps into the unknown with boundless optimism.",
+    uprightMeaningPt:
+      "Novos começos, inocência, espontaneidade, espírito livre. O Louco salta para o desconhecido com otimismo ilimitado.",
     reversedMeaning:
       "Naivety, foolishness, recklessness, risk-taking without caution. A warning to look before you leap.",
+    reversedMeaningPt:
+      "Ingenuidade, tolice, imprudência, riscos sem cautela. Um aviso para olhar antes de saltar.",
     waiteQuote:
       "He is the spirit in search of experience. He represents the mystical fool who has transcended worldly concerns.",
     element: "Air",
     planet: "Uranus",
     keywords: ["beginnings", "innocence", "adventure", "spontaneity"],
+    keywordsPt: ["começos", "inocência", "aventura", "espontaneidade"],
   },
   {
     id: "01-the-magician",
     name: "The Magician",
+    namePt: "O Mago",
     image: "/cards/01-TheMagician.png",
     arcana: "major",
     number: 1,
     romanNumeral: "I",
     uprightMeaning:
       "Willpower, desire, creation, manifestation. All tools are at your disposal — the question is whether you will use them.",
+    uprightMeaningPt:
+      "Força de vontade, desejo, criação, manifestação. Todas as ferramentas estão à sua disposição — a questão é se você as usará.",
     reversedMeaning:
       "Manipulation, poor planning, untapped talents. Skills are present but not being applied correctly.",
+    reversedMeaningPt:
+      "Manipulação, planejamento ruim, talentos inexplorados. As habilidades existem, mas não estão sendo aplicadas corretamente.",
     waiteQuote:
       "He has the whole creation as his domain. The four symbols of Magic are on his altar.",
     element: "Air",
     planet: "Mercury",
     keywords: ["willpower", "manifestation", "skill", "mastery"],
+    keywordsPt: ["vontade", "manifestação", "habilidade", "maestria"],
   },
   {
     id: "02-the-high-priestess",
     name: "The High Priestess",
+    namePt: "A Sacerdotisa",
     image: "/cards/02-TheHighPriestess.png",
     arcana: "major",
     number: 2,
     romanNumeral: "II",
     uprightMeaning:
       "Intuition, sacred knowledge, divine feminine, the subconscious mind. What lies beneath the surface?",
+    uprightMeaningPt:
+      "Intuição, conhecimento sagrado, feminino divino, o inconsciente. O que existe sob a superfície?",
     reversedMeaning:
       "Secrets, disconnected from intuition, withdrawal and silence. Hidden forces at work.",
+    reversedMeaningPt:
+      "Segredos, desconexão da intuição, recolhimento e silêncio. Forças ocultas em ação.",
     waiteQuote:
       "She represents the secret church and the spiritual bride. The veil guards the mystery within.",
     element: "Water",
     planet: "Moon",
     keywords: ["intuition", "mystery", "inner-knowledge", "subconscious"],
+    keywordsPt: ["intuição", "mistério", "autoconhecimento", "inconsciente"],
   },
   {
     id: "03-the-empress",
     name: "The Empress",
+    namePt: "A Imperatriz",
     image: "/cards/03-TheEmpress.png",
     arcana: "major",
     number: 3,
     romanNumeral: "III",
     uprightMeaning:
       "Femininity, beauty, nature, nurturing, abundance. Creation in its most fertile form.",
+    uprightMeaningPt:
+      "Feminilidade, beleza, natureza, cuidado, abundância. A criação em sua forma mais fértil.",
     reversedMeaning:
       "Creative block, dependence on others, smothering, neglect of self.",
+    reversedMeaningPt:
+      "Bloqueio criativo, dependência dos outros, sufocamento, negligência consigo mesmo.",
     waiteQuote:
       "She is the fruitful mother of thousands. Nature itself is the garment of her glory.",
     element: "Earth",
     planet: "Venus",
     keywords: ["fertility", "abundance", "nurturing", "nature"],
+    keywordsPt: ["fertilidade", "abundância", "cuidado", "natureza"],
   },
   {
     id: "04-the-emperor",
     name: "The Emperor",
+    namePt: "O Imperador",
     image: "/cards/04-TheEmperor.png",
     arcana: "major",
     number: 4,
     romanNumeral: "IV",
     uprightMeaning:
       "Authority, establishment, structure, a father figure. Order imposed upon chaos through strength of will.",
+    uprightMeaningPt:
+      "Autoridade, estabelecimento, estrutura, figura paterna. Ordem imposta ao caos pela força de vontade.",
     reversedMeaning:
       "Domination, excessive control, rigidity, stubbornness. Authority misused or lacking.",
+    reversedMeaningPt:
+      "Dominação, controle excessivo, rigidez, teimosia. Autoridade mal utilizada ou ausente.",
     waiteQuote:
       "He is the supreme lord of the temporal order. His throne is of stone — enduring, immovable.",
     element: "Fire",
     planet: "Aries",
     keywords: ["authority", "structure", "control", "stability"],
+    keywordsPt: ["autoridade", "estrutura", "controle", "estabilidade"],
   },
   {
     id: "05-the-hierophant",
     name: "The Hierophant",
+    namePt: "O Hierofante",
     image: "/cards/05-TheHierophant.png",
     arcana: "major",
     number: 5,
     romanNumeral: "V",
     uprightMeaning:
       "Spiritual wisdom, religious beliefs, conformity, tradition. The bridge between heaven and earth.",
+    uprightMeaningPt:
+      "Sabedoria espiritual, crenças religiosas, conformidade, tradição. A ponte entre o céu e a terra.",
     reversedMeaning:
       "Personal beliefs, freedom, challenging the status quo. Rebellion against institution.",
+    reversedMeaningPt:
+      "Crenças pessoais, liberdade, desafio ao status quo. Rebelião contra a instituição.",
     waiteQuote:
       "He is the ruling power of external religion. His keys unlock both earthly and celestial mysteries.",
     element: "Earth",
     planet: "Taurus",
     keywords: ["tradition", "wisdom", "institution", "conformity"],
+    keywordsPt: ["tradição", "sabedoria", "instituição", "conformidade"],
   },
   {
     id: "06-the-lovers",
     name: "The Lovers",
+    namePt: "Os Amantes",
     image: "/cards/06-TheLovers.png",
     arcana: "major",
     number: 6,
     romanNumeral: "VI",
     uprightMeaning:
       "Love, harmony, relationships, values alignment, choices. The sacred union of opposites.",
+    uprightMeaningPt:
+      "Amor, harmonia, relacionamentos, alinhamento de valores, escolhas. A união sagrada dos opostos.",
     reversedMeaning:
       "Self-love, disharmony, imbalance, misalignment of values. A crossroads poorly navigated.",
+    reversedMeaningPt:
+      "Amor próprio, desarmonia, desequilíbrio, desalinhamento de valores. Uma encruzilhada mal navegada.",
     waiteQuote:
       "He who is not afraid to take the supreme step — he alone can achieve the great work.",
     element: "Air",
     planet: "Gemini",
     keywords: ["love", "union", "choice", "values"],
+    keywordsPt: ["amor", "união", "escolha", "valores"],
   },
   {
     id: "07-the-chariot",
     name: "The Chariot",
+    namePt: "O Carro",
     image: "/cards/07-TheChariot.png",
     arcana: "major",
     number: 7,
     romanNumeral: "VII",
     uprightMeaning:
       "Control, willpower, success, action, determination. Victory through discipline and force of will.",
+    uprightMeaningPt:
+      "Controle, força de vontade, sucesso, ação, determinação. Vitória pela disciplina e pela força da vontade.",
     reversedMeaning:
       "Self-discipline, opposition, lack of direction, aggression. A chariot without a driver.",
+    reversedMeaningPt:
+      "Autodisciplina, oposição, falta de direção, agressividade. Um carro sem condutor.",
     waiteQuote:
       "The sphinxes pull in opposite directions — yet the charioteer holds the course by will alone.",
     element: "Water",
     planet: "Cancer",
     keywords: ["victory", "control", "determination", "conquest"],
+    keywordsPt: ["vitória", "controle", "determinação", "conquista"],
   },
   {
     id: "08-strength",
     name: "Strength",
+    namePt: "A Força",
     image: "/cards/08-Strength.png",
     arcana: "major",
     number: 8,
     romanNumeral: "VIII",
     uprightMeaning:
       "Strength, courage, patience, control, compassion. The lion is tamed not by force but by love.",
+    uprightMeaningPt:
+      "Força, coragem, paciência, controle, compaixão. O leão é domado não pela força, mas pelo amor.",
     reversedMeaning:
       "Inner strength, self-doubt, low energy, raw emotion. Courage failing at a critical moment.",
+    reversedMeaningPt:
+      "Força interior, autodúvida, baixa energia, emoção bruta. Coragem falhando em momento crítico.",
     waiteQuote:
       "It is a card of power and energy. The woman closes the jaws of the lion — gently, completely.",
     element: "Fire",
     planet: "Leo",
     keywords: ["courage", "patience", "compassion", "inner-strength"],
+    keywordsPt: ["coragem", "paciência", "compaixão", "força interior"],
   },
   {
     id: "09-the-hermit",
     name: "The Hermit",
+    namePt: "O Eremita",
     image: "/cards/09-TheHermit.png",
     arcana: "major",
     number: 9,
     romanNumeral: "IX",
     uprightMeaning:
       "Soul-searching, introspection, being alone, inner guidance. The lantern illuminates the solitary path ahead.",
+    uprightMeaningPt:
+      "Busca interior, introspecção, solidão, orientação interna. A lanterna ilumina o caminho solitário à frente.",
     reversedMeaning:
       "Isolation, loneliness, withdrawal. Reclusiveness that has become harmful to the self.",
+    reversedMeaningPt:
+      "Isolamento, solidão, recolhimento. Reclusão que se tornou prejudicial ao próprio ser.",
     waiteQuote:
       "The Hermit stands solitary with his lamp lit from within. He is the Cabbalist who has descended into the world.",
     element: "Earth",
     planet: "Virgo",
     keywords: ["solitude", "introspection", "guidance", "wisdom"],
+    keywordsPt: ["solidão", "introspecção", "orientação", "sabedoria"],
   },
   {
     id: "10-wheel-of-fortune",
     name: "Wheel of Fortune",
+    namePt: "A Roda da Fortuna",
     image: "/cards/10-WheelOfFortune.png",
     arcana: "major",
     number: 10,
     romanNumeral: "X",
     uprightMeaning:
       "Good luck, karma, life cycles, destiny, a turning point. The wheel turns — fortune follows.",
+    uprightMeaningPt:
+      "Boa sorte, karma, ciclos da vida, destino, um ponto de virada. A roda gira — a fortuna acompanha.",
     reversedMeaning:
       "Bad luck, resistance to change, breaking cycles. Fate resisted rather than embraced.",
+    reversedMeaningPt:
+      "Má sorte, resistência à mudança, quebra de ciclos. Destino resistido ao invés de abraçado.",
     waiteQuote:
       "The Wheel of Fortune is a symbol of the cosmic cycles of existence — forever turning, never still.",
     element: "Fire",
     planet: "Jupiter",
     keywords: ["fate", "cycles", "luck", "karma"],
+    keywordsPt: ["destino", "ciclos", "sorte", "karma"],
   },
   {
     id: "11-justice",
     name: "Justice",
+    namePt: "A Justiça",
     image: "/cards/11-Justice.png",
     arcana: "major",
     number: 11,
     romanNumeral: "XI",
     uprightMeaning:
       "Justice, fairness, truth, cause and effect, law. The scales are balanced — truth will prevail.",
+    uprightMeaningPt:
+      "Justiça, equidade, verdade, causa e efeito, lei. As balanças estão equilibradas — a verdade prevalecerá.",
     reversedMeaning:
       "Unfairness, lack of accountability, dishonesty. The scales tipped by hidden forces.",
+    reversedMeaningPt:
+      "Injustiça, falta de responsabilização, desonestidade. As balanças inclinadas por forças ocultas.",
     waiteQuote:
       "Justice lifts the balances of Truth, and the sword is the sword of reason. She is equity made manifest.",
     element: "Air",
     planet: "Libra",
     keywords: ["justice", "fairness", "truth", "balance"],
+    keywordsPt: ["justiça", "equidade", "verdade", "equilíbrio"],
   },
   {
     id: "12-the-hanged-man",
     name: "The Hanged Man",
+    namePt: "O Enforcado",
     image: "/cards/12-TheHangedMan.png",
     arcana: "major",
     number: 12,
     romanNumeral: "XII",
     uprightMeaning:
       "Pause, surrender, letting go, new perspectives. Sometimes the only way forward is to stop completely.",
+    uprightMeaningPt:
+      "Pausa, rendição, deixar ir, novas perspectivas. Às vezes a única forma de avançar é parar completamente.",
     reversedMeaning:
       "Delays, resistance, stalling, indecision. Martyrdom without purpose or reward.",
+    reversedMeaningPt:
+      "Atrasos, resistência, procrastinação, indecisão. Martírio sem propósito ou recompensa.",
     waiteQuote:
       "He hangs at his own will. His face exhibits deep entrancement rather than suffering.",
     element: "Water",
     planet: "Neptune",
     keywords: ["surrender", "pause", "perspective", "sacrifice"],
+    keywordsPt: ["rendição", "pausa", "perspectiva", "sacrifício"],
   },
   {
     id: "13-death",
     name: "Death",
+    namePt: "A Morte",
     image: "/cards/13-Death.png",
     arcana: "major",
     number: 13,
     romanNumeral: "XIII",
     uprightMeaning:
       "Endings, change, transformation, transition. Nothing ends that does not also begin again.",
+    uprightMeaningPt:
+      "Finais, mudança, transformação, transição. Nada termina sem que algo novo comece.",
     reversedMeaning:
       "Resistance to change, personal transformation, inner purging. Fighting the inevitable.",
+    reversedMeaningPt:
+      "Resistência à mudança, transformação pessoal, purificação interior. Lutar contra o inevitável.",
     waiteQuote:
       "The pale horse passes through and nothing withstands his passage. Yet the sun rises between the towers.",
     element: "Water",
     planet: "Scorpio",
     keywords: ["transformation", "endings", "change", "transition"],
+    keywordsPt: ["transformação", "finais", "mudança", "transição"],
   },
   {
     id: "14-temperance",
     name: "Temperance",
+    namePt: "A Temperança",
     image: "/cards/14-Temperance.png",
     arcana: "major",
     number: 14,
     romanNumeral: "XIV",
     uprightMeaning:
       "Balance, moderation, patience, purpose, meaning. The art of combining opposites harmoniously.",
+    uprightMeaningPt:
+      "Equilíbrio, moderação, paciência, propósito, significado. A arte de combinar opostos harmoniosamente.",
     reversedMeaning:
       "Imbalance, excess, self-healing, re-alignment needed. The golden mean abandoned.",
+    reversedMeaningPt:
+      "Desequilíbrio, excesso, autocura, realinhamento necessário. O equilíbrio dourado abandonado.",
     waiteQuote:
       "The great angel mixes the waters between the two cups — the elixir of life flows between worlds.",
     element: "Fire",
     planet: "Sagittarius",
     keywords: ["balance", "moderation", "patience", "harmony"],
+    keywordsPt: ["equilíbrio", "moderação", "paciência", "harmonia"],
   },
   {
     id: "15-the-devil",
     name: "The Devil",
+    namePt: "O Diabo",
     image: "/cards/15-TheDevil.png",
     arcana: "major",
     number: 15,
     romanNumeral: "XV",
     uprightMeaning:
       "Shadow self, attachment, addiction, restriction, sexuality. The chains you wear are of your own making.",
+    uprightMeaningPt:
+      "Sombra interior, apego, vício, restrição, sexualidade. As correntes que você veste são de sua própria criação.",
     reversedMeaning:
       "Releasing limiting beliefs, exploring dark thoughts, detachment. Breaking free of bondage.",
+    reversedMeaningPt:
+      "Libertação de crenças limitantes, exploração de pensamentos sombrios, desapego. Rompendo os laços da servidão.",
     waiteQuote:
       "The black throne of bondage — yet look carefully, for the chains are loose and could be lifted.",
     element: "Earth",
     planet: "Capricorn",
     keywords: ["bondage", "shadow", "materialism", "addiction"],
+    keywordsPt: ["servidão", "sombra", "materialismo", "vício"],
   },
   {
     id: "16-the-tower",
     name: "The Tower",
+    namePt: "A Torre",
     image: "/cards/16-TheTower.png",
     arcana: "major",
     number: 16,
     romanNumeral: "XVI",
     uprightMeaning:
       "Sudden change, upheaval, chaos, revelation, awakening. The lightning strikes what is false.",
+    uprightMeaningPt:
+      "Mudança súbita, agitação, caos, revelação, despertar. O raio atinge o que é falso.",
     reversedMeaning:
       "Personal transformation, fear of change, averting disaster. Avoidance of necessary destruction.",
+    reversedMeaningPt:
+      "Transformação pessoal, medo da mudança, evitar o desastre. Fuga da destruição necessária.",
     waiteQuote:
       "The foundations rumble beneath the proud tower. What lightning destroys was never truly built to last.",
     element: "Fire",
     planet: "Mars",
     keywords: ["upheaval", "revelation", "chaos", "transformation"],
+    keywordsPt: ["agitação", "revelação", "caos", "transformação"],
   },
   {
     id: "17-the-star",
     name: "The Star",
+    namePt: "A Estrela",
     image: "/cards/17-TheStar.png",
     arcana: "major",
     number: 17,
     romanNumeral: "XVII",
     uprightMeaning:
       "Hope, faith, purpose, renewal, spirituality. After the storm, the stars emerge to guide the way.",
+    uprightMeaningPt:
+      "Esperança, fé, propósito, renovação, espiritualidade. Após a tempestade, as estrelas surgem para guiar o caminho.",
     reversedMeaning:
       "Lack of faith, despair, self-trust issues, disconnection. Hope deferred indefinitely.",
+    reversedMeaningPt:
+      "Falta de fé, desespero, problemas de autoconfiança, desconexão. Esperança adiada indefinidamente.",
     waiteQuote:
       "She is the eternal source of life renewed. The stars shine down as she pours the waters of immortality.",
     element: "Air",
     planet: "Aquarius",
     keywords: ["hope", "renewal", "faith", "inspiration"],
+    keywordsPt: ["esperança", "renovação", "fé", "inspiração"],
   },
   {
     id: "18-the-moon",
     name: "The Moon",
+    namePt: "A Lua",
     image: "/cards/18-TheMoon.png",
     arcana: "major",
     number: 18,
     romanNumeral: "XVIII",
     uprightMeaning:
       "Illusion, fear, the unconscious, intuition, confusion. Not all that glimmers in moonlight is as it seems.",
+    uprightMeaningPt:
+      "Ilusão, medo, o inconsciente, intuição, confusão. Nem tudo que brilha ao luar é o que parece.",
     reversedMeaning:
       "Release of fear, repressed emotion, inner confusion. Clarity emerging through the fog.",
+    reversedMeaningPt:
+      "Liberação do medo, emoção reprimida, confusão interior. Clareza emergindo através da névoa.",
     waiteQuote:
       "The path between two towers — the moon illuminates but deceives. Beware what crawls from the deep.",
     element: "Water",
     planet: "Pisces",
     keywords: ["illusion", "subconscious", "fear", "intuition"],
+    keywordsPt: ["ilusão", "inconsciente", "medo", "intuição"],
   },
   {
     id: "19-the-sun",
     name: "The Sun",
+    namePt: "O Sol",
     image: "/cards/19-TheSun.png",
     arcana: "major",
     number: 19,
     romanNumeral: "XIX",
     uprightMeaning:
       "Positivity, fun, warmth, success, vitality. The sun shines upon all things with equal and joyful light.",
+    uprightMeaningPt:
+      "Positividade, diversão, calor, sucesso, vitalidade. O sol brilha sobre todas as coisas com luz igual e alegre.",
     reversedMeaning:
       "Inner child, feeling down, overly optimistic. The sun temporarily hidden behind clouds.",
+    reversedMeaningPt:
+      "Criança interior, sentir-se para baixo, otimismo excessivo. O sol temporariamente escondido atrás das nuvens.",
     waiteQuote:
       "The Sun is the great luminary that gives life to the world. The child upon the horse is joy incarnate.",
     element: "Fire",
     planet: "Sun",
     keywords: ["joy", "success", "positivity", "vitality"],
+    keywordsPt: ["alegria", "sucesso", "positividade", "vitalidade"],
   },
   {
     id: "20-judgement",
     name: "Judgement",
+    namePt: "O Julgamento",
     image: "/cards/20-Judgement.png",
     arcana: "major",
     number: 20,
     romanNumeral: "XX",
     uprightMeaning:
       "Judgement, rebirth, inner calling, absolution. The trumpet sounds — rise and answer the call.",
+    uprightMeaningPt:
+      "Julgamento, renascimento, chamado interior, absolvição. A trombeta soa — levante-se e responda ao chamado.",
     reversedMeaning:
       "Self-doubt, inner critic, ignoring the call. Judgement avoided through fear.",
+    reversedMeaningPt:
+      "Autodúvida, crítico interior, ignorar o chamado. Julgamento evitado pelo medo.",
     waiteQuote:
       "The great angel sounds the last trumpet. The dead rise — but it is the living who must truly awaken.",
     element: "Fire",
     planet: "Pluto",
     keywords: ["rebirth", "calling", "absolution", "awakening"],
+    keywordsPt: ["renascimento", "chamado", "absolvição", "despertar"],
   },
   {
     id: "21-the-world",
     name: "The World",
+    namePt: "O Mundo",
     image: "/cards/21-TheWorld.png",
     arcana: "major",
     number: 21,
     romanNumeral: "XXI",
     uprightMeaning:
       "Completion, integration, accomplishment, travel. The great work is done — celebrate and begin again.",
+    uprightMeaningPt:
+      "Conclusão, integração, realização, viagem. A grande obra está feita — celebre e comece novamente.",
     reversedMeaning:
       "Seeking personal closure, short-cuts, delays. The final step not yet taken.",
+    reversedMeaningPt:
+      "Busca por fechamento pessoal, atalhos, atrasos. O passo final ainda não dado.",
     waiteQuote:
       "The dancer in the wreath is the Great Triumphant Heroine. The cycle is complete — and everything begins again.",
     element: "Earth",
     planet: "Saturn",
     keywords: ["completion", "wholeness", "accomplishment", "integration"],
+    keywordsPt: ["conclusão", "totalidade", "realização", "integração"],
   },
 
   // ─── WANDS ──────────────────────────────────────────────────
   ...Array.from({ length: 14 }, (_, i) => {
     const n = i + 1;
     const names = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Page","Knight","Queen","King"];
+    const namesPt = ["Ás","Dois","Três","Quatro","Cinco","Seis","Sete","Oito","Nove","Dez","Valete","Cavaleiro","Rainha","Rei"];
     const upright = [
       "Inspiration, new beginnings, growth, potential — a creative spark ignites.",
       "Planning, decisions, discovery — two paths diverge in the firelit wood.",
@@ -398,6 +531,22 @@ export const CARDS: TarotCard[] = [
       "Energy, passion, adventure, impulsiveness — charge without hesitation.",
       "Courage, determination, joy, vibrancy — the queen commands her flame.",
       "Natural authority, honour, accomplishment — the king rules with fire.",
+    ];
+    const uprightPt = [
+      "Inspiração, novos começos, crescimento, potencial — uma fagulha criativa se acende.",
+      "Planejamento, decisões, descoberta — dois caminhos divergem na floresta iluminada pelo fogo.",
+      "Progresso, expansão, previsão — os navios estão prontos para zarpar.",
+      "Celebração, harmonia, retorno ao lar — o festival da colheita está completo.",
+      "Competição, conflito, adversidade — a rivalidade aguça o espírito.",
+      "Sucesso, reconhecimento público, progresso — o retorno vitorioso.",
+      "Perseverança, postura defensiva, manter o terreno — firme.",
+      "Velocidade, ação, viagem, movimento — notícias chegam rapidamente.",
+      "Resiliência, coragem, persistência — marcado pela batalha, mas inteiro.",
+      "Fardo, responsabilidade, trabalho duro — a carga é pesada, mas o objetivo está próximo.",
+      "Exploração, espírito livre, aventura — um jovem sonhador parte em jornada.",
+      "Energia, paixão, aventura, impulsividade — avance sem hesitação.",
+      "Coragem, determinação, alegria, vivacidade — a rainha comanda sua chama.",
+      "Autoridade natural, honra, realizações — o rei governa com fogo.",
     ];
     const reversed = [
       "Delays, lack of motivation, weighed down — the spark struggles to catch.",
@@ -415,17 +564,37 @@ export const CARDS: TarotCard[] = [
       "Demands, jealousy, insecurity — passion turned possessive.",
       "Impulsiveness, haste, ruthlessness — power misused.",
     ];
+    const reversedPt = [
+      "Atrasos, falta de motivação, sobrecarregado — a fagulha luta para se acender.",
+      "Medo do desconhecido, falta de planejamento, impaciência — a indecisão obscurece o caminho.",
+      "Excesso de confiança, falta de previsão, obstáculos — planos que não foram testados.",
+      "Desarmonia, tensão, quebra de comunicação — discórdia interior.",
+      "Conflito, desacordo, tensão — emoções acaloradas nublam o julgamento.",
+      "Egoísmo, arrogância, atrasos no reconhecimento — sucesso retido.",
+      "Ansiedade, defensividade, exaustão — sobrecarregado por todos os lados.",
+      "Atrasos, sensação de perda de controle, eventos acelerados — prepare-se.",
+      "Recursos internos, teimosia, recusa em recuar — a que custo?",
+      "Incapacidade de delegar, energia opressiva — quando largar o fardo.",
+      "Precipitado, não confiável, acessos de raiva — energia sem direção.",
+      "Pressa, comportamento imprudente, energia dispersa — freie o avanço.",
+      "Exigências, ciúme, insegurança — paixão tornada possessiva.",
+      "Impulsividade, pressa, crueldade — poder mal utilizado.",
+    ];
     return {
       id: `wands-${String(n).padStart(2,"0")}`,
       name: `${names[i]} of Wands`,
+      namePt: `${namesPt[i]} de Paus`,
       image: `/cards/Wands${String(n).padStart(2,"0")}.png`,
       arcana: "wands" as const,
       number: n,
       uprightMeaning: upright[i],
+      uprightMeaningPt: uprightPt[i],
       reversedMeaning: reversed[i],
+      reversedMeaningPt: reversedPt[i],
       waiteQuote: `The ${names[i]} of Wands speaks of fire — that creative, primal force that drives all endeavour.`,
       element: "Fire",
       keywords: ["fire","passion","creativity","ambition"],
+      keywordsPt: ["fogo","paixão","criatividade","ambição"],
     };
   }),
 
@@ -433,6 +602,7 @@ export const CARDS: TarotCard[] = [
   ...Array.from({ length: 14 }, (_, i) => {
     const n = i + 1;
     const names = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Page","Knight","Queen","King"];
+    const namesPt = ["Ás","Dois","Três","Quatro","Cinco","Seis","Sete","Oito","Nove","Dez","Valete","Cavaleiro","Rainha","Rei"];
     const upright = [
       "New feelings, intuition, creativity, love — the cup overflows with possibility.",
       "Unified love, partnership, mutual attraction — two souls mirror each other.",
@@ -448,6 +618,22 @@ export const CARDS: TarotCard[] = [
       "Romance, charm, 'Knight in shining armour' — but is he as he seems?",
       "Emotional security, calm, compassionate counsel — the queen of still waters.",
       "Emotional balance, generosity, calm authority — wisdom through feeling.",
+    ];
+    const uprightPt = [
+      "Novos sentimentos, intuição, criatividade, amor — o cálice transborda de possibilidade.",
+      "Amor unificado, parceria, atração mútua — duas almas se espelham.",
+      "Celebração, amizade, criatividade, colaborações — erga o cálice com alegria.",
+      "Meditação, contemplação, apatia, reavaliação — o mundo oferecido, mas a mão retraída.",
+      "Perda, tristeza, desespero, luto — mas dois cálices permanecem de pé atrás de você.",
+      "Nostalgia, memórias felizes, reunião, alegria infantil — o passado dourado revisitado.",
+      "Fantasia, ilusão, pensamento desejoso, escolhas — a névoa oculta muitas portas.",
+      "Decepção, abandono, recolhimento — deixando o que não serve mais.",
+      "Contentamento, satisfação, estabilidade emocional — desejos realizados e saboreados.",
+      "Amor divino, finais venturosos, família, harmonia — o arco-íris após a tempestade.",
+      "Oportunidades criativas, intuição, sensibilidade — um novo capítulo emocional acena.",
+      "Romance, charme, 'Cavaleiro de armadura brilhante' — mas será que ele é o que parece?",
+      "Segurança emocional, calma, conselho compassivo — a rainha das águas tranquilas.",
+      "Equilíbrio emocional, generosidade, autoridade calma — sabedoria através do sentimento.",
     ];
     const reversed = [
       "Emotional loss, blocked creativity, emptiness — the cup turned inward.",
@@ -465,17 +651,37 @@ export const CARDS: TarotCard[] = [
       "Emotional insecurity, dependence, inner feelings — the still surface hiding depths.",
       "Emotional manipulation, moodiness, withdrawal — depth becoming darkness.",
     ];
+    const reversedPt = [
+      "Perda emocional, criatividade bloqueada, vazio — o cálice voltado para dentro.",
+      "Desequilíbrio, comunicação rompida, tensão — conexão sobrecarregada.",
+      "Excesso, fofoca, isolamento — a celebração azeda.",
+      "Tédio, oportunidades perdidas, perder o foco — distraído do que importa.",
+      "Contratempos pessoais, autoperdão, seguir em frente — aceitação da perda.",
+      "Viver no passado, ingenuidade, expectativas irreais — nostalgia como fuga.",
+      "Alinhamento, clareza de escolha, tentação — enxergando através da ilusão.",
+      "Desesperança, seguir em frente, recolhimento — quando partir.",
+      "Falta de contentamento, vaidade, insatisfação — desejos não realizados.",
+      "Família despedaçada, desalinhamento de valores — o arco-íris encoberto por nuvens.",
+      "Imaturidade emocional, bloqueios criativos, insegurança — hesitação no limiar.",
+      "Não confiável, emocionalmente imaturo, fraude — charme ocultando o vazio.",
+      "Insegurança emocional, dependência, sentimentos interiores — a superfície calma ocultando profundezas.",
+      "Manipulação emocional, temperamento instável, recolhimento — profundidade tornando-se escuridão.",
+    ];
     return {
       id: `cups-${String(n).padStart(2,"0")}`,
       name: `${names[i]} of Cups`,
+      namePt: `${namesPt[i]} de Copas`,
       image: `/cards/Cups${String(n).padStart(2,"0")}.png`,
       arcana: "cups" as const,
       number: n,
       uprightMeaning: upright[i],
+      uprightMeaningPt: uprightPt[i],
       reversedMeaning: reversed[i],
+      reversedMeaningPt: reversedPt[i],
       waiteQuote: `The ${names[i]} of Cups — all things of the water, emotion, and the world of feeling.`,
       element: "Water",
       keywords: ["water","emotion","love","intuition"],
+      keywordsPt: ["água","emoção","amor","intuição"],
     };
   }),
 
@@ -483,6 +689,7 @@ export const CARDS: TarotCard[] = [
   ...Array.from({ length: 14 }, (_, i) => {
     const n = i + 1;
     const names = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Page","Knight","Queen","King"];
+    const namesPt = ["Ás","Dois","Três","Quatro","Cinco","Seis","Sete","Oito","Nove","Dez","Valete","Cavaleiro","Rainha","Rei"];
     const upright = [
       "Breakthroughs, new ideas, mental clarity, success — the sword cuts through confusion.",
       "Difficult choices, indecision, stalemate — eyes blindfolded before two blades.",
@@ -498,6 +705,22 @@ export const CARDS: TarotCard[] = [
       "Action, impulsiveness, intellectual speed — charge now, question later.",
       "Complexity, experience, sharp wit — cutting through pretension with clarity.",
       "Mental clarity, intellectual power, authority — truth as the sovereign virtue.",
+    ];
+    const uprightPt = [
+      "Avanços, novas ideias, clareza mental, sucesso — a espada corta a confusão.",
+      "Escolhas difíceis, indecisão, impasse — olhos vendados diante de duas lâminas.",
+      "Separação dolorosa, tristeza, luto — as três espadas perfuram o coração.",
+      "Descanso, relaxamento, contemplação — a espada do guerreiro posta de lado para curar.",
+      "Conflito, tensão, perda, transição — nem toda batalha tem um vencedor claro.",
+      "Transição, mudança, rito de passagem — o barco te leva a águas mais calmas.",
+      "Decepção, estratégia, impermanência — o que é levado embora e o que fica?",
+      "Restrição, pensamento aprisionado, impotência — mas os laços podem ser afrouxados.",
+      "Ansiedade, turbulência interior, medo, medos profundos — o pesadelo que te acorda.",
+      "Finais dolorosos, traição, crise, ruína — o ponto mais baixo antes do amanhecer.",
+      "Agilidade mental, curiosidade, novas ideias — mente afiada, ávida por verdade.",
+      "Ação, impulsividade, velocidade intelectual — avance agora, questione depois.",
+      "Complexidade, experiência, sagacidade — cortando a pretensão com clareza.",
+      "Clareza mental, poder intelectual, autoridade — a verdade como virtude soberana.",
     ];
     const reversed = [
       "Confusion, brutality, chaos — power without wisdom.",
@@ -515,17 +738,37 @@ export const CARDS: TarotCard[] = [
       "Coldness, bitterness, overly-critical — sharp wit become cruelty.",
       "Abuse of power, manipulation, clear-thinking clouded by cruelty — wisdom misapplied.",
     ];
+    const reversedPt = [
+      "Confusão, brutalidade, caos — poder sem sabedoria.",
+      "Indecisão, impasse, evitar conflitos — a venda escolhida, não imposta.",
+      "Liberação da dor, otimismo — escolher remover as espadas.",
+      "Inquietação, isolamento, esgotamento — o guerreiro se recusa a descansar.",
+      "Reconciliação, ressentimento passado, conduta antidesportiva — paz forçada.",
+      "Fuga, estagnação, negócios inacabados — o barco que não sai da margem.",
+      "Consciência, desonestidade, roubo — flagrado em ato.",
+      "Restrição autoimposta, liberação de crenças limitantes — desatar-se.",
+      "Turbulência interior, desesperança, medo do amanhã — ansiedade voltada para dentro.",
+      "Recuperação, regeneração, fim inevitável — o que surge das cinzas?",
+      "Comunicação precipitada, energia dispersa, decepção — palavras usadas como armas.",
+      "Precipitar-se, tomada de decisões imprudentes — a carga antes do pensamento.",
+      "Frieza, amargura, excessivamente crítico — sagacidade tornada crueldade.",
+      "Abuso de poder, manipulação, pensamento claro nublado pela crueldade — sabedoria mal aplicada.",
+    ];
     return {
       id: `swords-${String(n).padStart(2,"0")}`,
       name: `${names[i]} of Swords`,
+      namePt: `${namesPt[i]} de Espadas`,
       image: `/cards/Swords${String(n).padStart(2,"0")}.png`,
       arcana: "swords" as const,
       number: n,
       uprightMeaning: upright[i],
+      uprightMeaningPt: uprightPt[i],
       reversedMeaning: reversed[i],
+      reversedMeaningPt: reversedPt[i],
       waiteQuote: `The ${names[i]} of Swords — the blade that severs and illuminates, for truth is never painless.`,
       element: "Air",
       keywords: ["air","intellect","conflict","truth"],
+      keywordsPt: ["ar","intelecto","conflito","verdade"],
     };
   }),
 
@@ -533,6 +776,7 @@ export const CARDS: TarotCard[] = [
   ...Array.from({ length: 14 }, (_, i) => {
     const n = i + 1;
     const names = ["Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Page","Knight","Queen","King"];
+    const namesPt = ["Ás","Dois","Três","Quatro","Cinco","Seis","Sete","Oito","Nove","Dez","Valete","Cavaleiro","Rainha","Rei"];
     const upright = [
       "New financial opportunities, manifestation, abundance — the golden disc offered.",
       "Multiple priorities, time management, prioritization — juggling with grace.",
@@ -548,6 +792,22 @@ export const CARDS: TarotCard[] = [
       "Hard work, productivity, routine — the knight who never rushes but never stops.",
       "Practicality, creature comforts, financial security — the queen of material wisdom.",
       "Abundance, prosperity, security, leadership — the king who mastered the material world.",
+    ];
+    const uprightPt = [
+      "Novas oportunidades financeiras, manifestação, abundância — o disco dourado oferecido.",
+      "Múltiplas prioridades, gestão do tempo, priorização — equilibrando com graça.",
+      "Trabalho em equipe, realização inicial, colaboração — obra-prima em andamento.",
+      "Segurança, controle, conservação, possessividade — guardando o que foi conquistado.",
+      "Perda financeira, mentalidade de pobreza, isolamento — o frio fora da igreja quente.",
+      "Generosidade, caridade, dar e receber — as balanças da fortuna equilibradas.",
+      "Visão de longo prazo, resultados sustentáveis, perseverança — a colheita se aproxima.",
+      "Aprendizado, repetição, construção de habilidades — o caminho do mestre artesão.",
+      "Abundância, independência financeira, luxo — frutos de longo trabalho.",
+      "Riqueza, segurança financeira, família, sucesso a longo prazo — o legado completo.",
+      "Oportunidade financeira, desenvolvimento de habilidades, bolsa de estudos — estudante ávido de abundância.",
+      "Trabalho duro, produtividade, rotina — o cavaleiro que nunca se apressa, mas nunca para.",
+      "Praticidade, confortos materiais, segurança financeira — a rainha da sabedoria material.",
+      "Abundância, prosperidade, segurança, liderança — o rei que dominou o mundo material.",
     ];
     const reversed = [
       "Lost opportunity, lack of planning, bad investment — the disc withheld.",
@@ -565,17 +825,37 @@ export const CARDS: TarotCard[] = [
       "Imbalance in work and home life, self-neglect — the queen abandoning her garden.",
       "Financial instability, greed, stubbornness — the king who hoards rather than rules.",
     ];
+    const reversedPt = [
+      "Oportunidade perdida, falta de planejamento, mau investimento — o disco retido.",
+      "Desequilíbrio, desorganização, sobrecarga — uma bola toca o chão.",
+      "Falta de trabalho em equipe, desarmonia, desalinhamento — a obra-prima abandonada.",
+      "Ganância, materialismo, autoproteção — agarrar até as mãos doírem.",
+      "Recuperação de perda financeira, superar dificuldades — voltar para o calor.",
+      "Dívida, egoísmo, caridade unilateral — dar com condições.",
+      "Falta de visão de longo prazo, crescimento limitado, impaciência — colher cedo demais.",
+      "Autodesenvolvimento, perfeccionismo, mediocridade — tédio com o ofício.",
+      "Autoestima, excesso de investimento no trabalho, materialismo — quando chega, chega?",
+      "Fracasso financeiro, solidão, perda — o legado que desmoronou.",
+      "Falta de progresso, procrastinação, aprender com falhas — a lição ainda não aprendida.",
+      "Preguiça, irresponsabilidade financeira, falta de propósito — o cavalo lento parado.",
+      "Desequilíbrio entre trabalho e vida doméstica, autonegligência — a rainha abandonando seu jardim.",
+      "Instabilidade financeira, ganância, teimosia — o rei que acumula em vez de governar.",
+    ];
     return {
       id: `pentacles-${String(n).padStart(2,"0")}`,
       name: `${names[i]} of Pentacles`,
+      namePt: `${namesPt[i]} de Ouros`,
       image: `/cards/Pentacles${String(n).padStart(2,"0")}.png`,
       arcana: "pentacles" as const,
       number: n,
       uprightMeaning: upright[i],
+      uprightMeaningPt: uprightPt[i],
       reversedMeaning: reversed[i],
+      reversedMeaningPt: reversedPt[i],
       waiteQuote: `The ${names[i]} of Pentacles — earth made manifest, the tangible fruit of invisible labour.`,
       element: "Earth",
       keywords: ["earth","material","money","stability"],
+      keywordsPt: ["terra","material","dinheiro","estabilidade"],
     };
   }),
 ];

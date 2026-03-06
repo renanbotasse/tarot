@@ -1,0 +1,38 @@
+/* [next]/internal/font/google/im_fell_english_d82458a9.module.css [app-client] (css) */
+@font-face {
+  font-family: IM Fell English;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../media/0b7c5b993c1057ea-s.p.aec188af.woff2") format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: IM Fell English;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../media/3cabd365f8c28a7b-s.p.bb3268b7.woff2") format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: IM Fell English Fallback;
+  src: local(Times New Roman);
+  ascent-override: 88.71%;
+  descent-override: 35.6%;
+  line-gap-override: 0.0%;
+  size-adjust: 102.04%;
+}
+
+.im_fell_english_d82458a9-module__1kp4jG__className {
+  font-family: IM Fell English, IM Fell English Fallback;
+  font-weight: 400;
+}
+
+.im_fell_english_d82458a9-module__1kp4jG__variable {
+  --font-fell: "IM Fell English", "IM Fell English Fallback";
+}
+
+/*# sourceMappingURL=%5Bnext%5D_internal_font_google_im_fell_english_d82458a9_module_css_bad6b30c._.single.css.map*/

@@ -4,15 +4,19 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { clsx } from "clsx";
-
-const links = [
-  { href: "/reading", label: "Tarot Spreads" },
-  { href: "/library", label: "Library" },
-  { href: "/premium", label: "Premium" },
-];
+import { useLanguageStore } from "@/store/useLanguageStore";
+import { useT } from "@/hooks/useT";
 
 export default function Nav() {
   const pathname = usePathname();
+  const { lang, setLang } = useLanguageStore();
+  const t = useT();
+
+  const links = [
+    { href: "/reading", label: t.nav.spreads },
+    { href: "/library", label: t.nav.library },
+    { href: "/premium", label: t.nav.premium },
+  ];
 
   return (
     <header
@@ -48,6 +52,29 @@ export default function Nav() {
             {l.label}
           </Link>
         ))}
+
+        {/* Language toggle */}
+        <div className="flex items-center gap-1 ml-2 border-l border-white/10 pl-4">
+          <button
+            onClick={() => setLang("en")}
+            className={clsx(
+              "font-cinzel text-xs font-bold uppercase tracking-wider transition-colors",
+              lang === "en" ? "text-primary" : "text-slate-500 hover:text-slate-300"
+            )}
+          >
+            EN
+          </button>
+          <span className="text-slate-600 text-xs">|</span>
+          <button
+            onClick={() => setLang("pt")}
+            className={clsx(
+              "font-cinzel text-xs font-bold uppercase tracking-wider transition-colors",
+              lang === "pt" ? "text-primary" : "text-slate-500 hover:text-slate-300"
+            )}
+          >
+            PT
+          </button>
+        </div>
       </nav>
     </header>
   );

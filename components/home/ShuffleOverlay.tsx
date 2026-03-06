@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { SpreadConfig } from "@/lib/spreads";
 import { useSessionStore } from "@/store/useSessionStore";
+import { useT } from "@/hooks/useT";
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 interface ShuffleOverlayProps {
   spread: SpreadConfig;
@@ -17,6 +19,8 @@ type Phase = "entering" | "focus" | "shuffling" | "done";
 export default function ShuffleOverlay({ spread, onClose }: ShuffleOverlayProps) {
   const router = useRouter();
   const startSession = useSessionStore((s) => s.startSession);
+  const t = useT();
+  const { lang } = useLanguageStore();
   const [phase, setPhase] = useState<Phase>("entering");
   const [question, setQuestion] = useState("");
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -65,7 +69,7 @@ export default function ShuffleOverlay({ spread, onClose }: ShuffleOverlayProps)
         onClick={onClose}
         className="absolute top-6 right-8 text-slate-500 hover:text-primary text-sm uppercase tracking-widest font-cinzel"
       >
-        ✕ Close
+        {t.shuffle.close}
       </button>
 
       {/* Spread name */}
@@ -75,10 +79,12 @@ export default function ShuffleOverlay({ spread, onClose }: ShuffleOverlayProps)
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
-        <p className="text-primary text-sm uppercase tracking-[0.4em] font-cinzel mb-1">Selected Spread</p>
-        <h2 className="font-playfair text-5xl font-bold text-white italic">{spread.name}</h2>
+        <p className="text-primary text-sm uppercase tracking-[0.4em] font-cinzel mb-1">{t.shuffle.selectedSpread}</p>
+        <h2 className="font-playfair text-5xl font-bold text-white italic">
+          {lang === "pt" ? (spread.namePt ?? spread.name) : spread.name}
+        </h2>
         <p className="text-slate-400 text-base mt-1 font-fell">
-          {spread.cardCount} cards drawn from the full 78-card Rider-Waite deck
+          {t.shuffle.cardsDrawn(spread.cardCount)}
         </p>
       </motion.div>
 
@@ -127,7 +133,7 @@ export default function ShuffleOverlay({ spread, onClose }: ShuffleOverlayProps)
           {phase === "focus" && (
             <motion.div key="focus" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-5">
               <p className="text-parchment font-fell text-xl italic">
-                "Speak your question to the cosmos. The cards will answer."
+                "{t.shuffle.speakQuestion}"
               </p>
 
               <div className="relative">
@@ -137,7 +143,7 @@ export default function ShuffleOverlay({ spread, onClose }: ShuffleOverlayProps)
                   maxLength={120}
                   onChange={(e) => setQuestion(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Write your question here…"
+                  placeholder={t.shuffle.questionPlaceholder}
                   rows={3}
                   className="w-full resize-none rounded px-4 py-3 font-fell text-lg text-slate-200 placeholder-slate-600 outline-none focus:ring-1 focus:ring-primary leading-relaxed"
                   style={{
@@ -147,7 +153,7 @@ export default function ShuffleOverlay({ spread, onClose }: ShuffleOverlayProps)
                 />
                 <div className="flex justify-between mt-1">
                   <p className="text-slate-600 text-xs font-cinzel uppercase tracking-widest">
-                    Press Enter to shuffle
+                    {t.shuffle.pressEnter}
                   </p>
                   <p className="text-slate-600 text-xs font-cinzel tabular-nums">
                     {question.length}/120
@@ -169,7 +175,7 @@ export default function ShuffleOverlay({ spread, onClose }: ShuffleOverlayProps)
                 whileHover={question.trim() ? { background: "rgba(184,134,11,0.15)", boxShadow: "0 0 20px rgba(184,134,11,0.3)" } : {}}
                 whileTap={question.trim() ? { scale: 0.97 } : {}}
               >
-                ✦ Shuffle the Deck ✦
+                {t.shuffle.shuffleBtn}
               </motion.button>
             </motion.div>
           )}
@@ -184,7 +190,7 @@ export default function ShuffleOverlay({ spread, onClose }: ShuffleOverlayProps)
                 animate={{ opacity: [1, 0.5, 1] }}
                 transition={{ duration: 0.5, repeat: Infinity }}
               >
-                The spirits are listening…
+                {t.shuffle.listening}
               </motion.p>
               <div className="flex justify-center gap-2 mt-2">
                 {[...Array(7)].map((_, i) => (
@@ -202,7 +208,7 @@ export default function ShuffleOverlay({ spread, onClose }: ShuffleOverlayProps)
                 "{question}"
               </p>
               <p className="text-parchment font-fell text-xl italic">
-                "The cards have been laid before the cosmos. Your reading awaits."
+                "{t.shuffle.cardsLaid}"
               </p>
               <motion.button
                 onClick={beginReading}
@@ -213,7 +219,7 @@ export default function ShuffleOverlay({ spread, onClose }: ShuffleOverlayProps)
                 animate={{ boxShadow: ["0 0 20px rgba(255,215,0,0.2)", "0 0 40px rgba(255,215,0,0.5)", "0 0 20px rgba(255,215,0,0.2)"] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                ✦ Begin the Revelation ✦
+                {t.shuffle.beginBtn}
               </motion.button>
             </motion.div>
           )}

@@ -1,0 +1,6 @@
+{
+  "/library/page": "app/library/page.js",
+  "/page": "app/page.js",
+  "/premium/page": "app/premium/page.js",
+  "/reading/page": "app/reading/page.js"
+}

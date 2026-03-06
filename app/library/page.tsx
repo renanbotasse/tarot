@@ -6,22 +6,32 @@ import Image from "next/image";
 import { Search, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { CARDS, TarotCard } from "@/lib/cards";
 import Nav from "@/components/shared/Nav";
+import { useT } from "@/hooks/useT";
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 type FilterTab = "all" | "major" | "wands" | "cups" | "swords" | "pentacles";
-
-const TABS: { id: FilterTab; label: string }[] = [
-  { id: "all", label: "All" },
-  { id: "major", label: "Major Arcana" },
-  { id: "wands", label: "Wands" },
-  { id: "cups", label: "Cups" },
-  { id: "swords", label: "Swords" },
-  { id: "pentacles", label: "Pentacles" },
-];
 
 const CARDS_PER_PAGE = 18;
 const ROTATIONS = [-2, 1.5, -1.5, 2, -0.5, 1];
 
 export default function LibraryPage() {
+  const t = useT();
+  const { lang } = useLanguageStore();
+
+  const TABS: { id: FilterTab; label: string }[] = [
+    { id: "all", label: t.library.tabs.all },
+    { id: "major", label: t.library.tabs.major },
+    { id: "wands", label: t.library.tabs.wands },
+    { id: "cups", label: t.library.tabs.cups },
+    { id: "swords", label: t.library.tabs.swords },
+    { id: "pentacles", label: t.library.tabs.pentacles },
+  ];
+
+  const cardName = (c: TarotCard) => lang === "pt" ? (c.namePt ?? c.name) : c.name;
+  const cardMeaning = (c: TarotCard) => lang === "pt" ? (c.uprightMeaningPt ?? c.uprightMeaning) : c.uprightMeaning;
+  const cardReversed = (c: TarotCard) => lang === "pt" ? (c.reversedMeaningPt ?? c.reversedMeaning) : c.reversedMeaning;
+  const cardKeywords = (c: TarotCard) => lang === "pt" ? (c.keywordsPt ?? c.keywords) : c.keywords;
+
   const [activeTab, setActiveTab] = useState<FilterTab>("all");
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -35,7 +45,12 @@ export default function LibraryPage() {
     }
     if (search.trim()) {
       const q = search.toLowerCase();
-      cards = cards.filter((c) => c.name.toLowerCase().includes(q) || c.keywords.some((k) => k.includes(q)));
+      cards = cards.filter((c) =>
+        c.name.toLowerCase().includes(q) ||
+        (c.namePt ?? "").toLowerCase().includes(q) ||
+        c.keywords.some((k) => k.includes(q)) ||
+        (c.keywordsPt ?? []).some((k) => k.includes(q))
+      );
     }
     return cards;
   }, [activeTab, search]);
@@ -66,10 +81,10 @@ export default function LibraryPage() {
             {/* Page title */}
             <div className="mb-5 text-center max-w-lg mx-auto">
               <h1 className="text-3xl font-playfair font-bold text-primary mb-1.5 drop-shadow-md">
-                The Tarot Library
+                {t.library.title}
               </h1>
               <p className="text-slate-400 italic font-fell text-sm">
-                "A collection of ancient wisdom and symbolic archetypes from the 1911 Rider-Waite traditions."
+                "{t.library.subtitle}"
               </p>
             </div>
 
@@ -81,7 +96,7 @@ export default function LibraryPage() {
                 <input
                   value={search}
                   onChange={(e) => { setSearch(e.target.value); setPage(1); }}
-                  placeholder="Search the unknown…"
+                  placeholder={t.library.searchPlaceholder}
                   className="pl-8 pr-3 py-1 text-xs rounded-lg text-slate-200 w-full outline-none focus:ring-1 focus:ring-primary"
                   style={{
                     background: "rgba(15,18,30,0.8)",
@@ -161,7 +176,7 @@ export default function LibraryPage() {
                     <div className="absolute inset-0 transition-opacity opacity-0 group-hover:opacity-100" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)" }} />
                     {/* View label on hover */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <span className="text-[21px] text-white font-cinzel font-bold uppercase tracking-widest" style={{ textShadow: "0 0 8px rgba(0,0,0,0.8)" }}>View →</span>
+                      <span className="text-[21px] text-white font-cinzel font-bold uppercase tracking-widest" style={{ textShadow: "0 0 8px rgba(0,0,0,0.8)" }}>{t.library.viewCard}</span>
                     </div>
                   </div>
 
@@ -174,7 +189,7 @@ export default function LibraryPage() {
                       transform: `rotate(${ROTATIONS[i % 6]}deg)`,
                     }}
                   >
-                    <span className="font-fell text-[13px] font-bold">{card.name}</span>
+                    <span className="font-fell text-[13px] font-bold">{cardName(card)}</span>
                   </div>
                 </motion.div>
               ))}
@@ -240,7 +255,7 @@ export default function LibraryPage() {
             <div className="flex items-center gap-1.5 text-primary/40">
               <span>✦</span>
               <p className="font-fell text-[11px] uppercase tracking-[0.2em]">
-                Seek and ye shall find
+                {t.library.footer}
               </p>
               <span>✦</span>
             </div>
@@ -284,7 +299,7 @@ export default function LibraryPage() {
               >
                 <Image
                   src={selectedCard.image}
-                  alt={selectedCard.name}
+                  alt={cardName(selectedCard)}
                   fill
                   className="object-cover"
                 />
@@ -302,11 +317,11 @@ export default function LibraryPage() {
                   }}
                 >
                   {selectedCard.arcana === "major"
-                    ? `Major Arcana · ${selectedCard.romanNumeral}`
+                    ? `${t.card.majorArcana} · ${selectedCard.romanNumeral}`
                     : `${selectedCard.arcana.charAt(0).toUpperCase() + selectedCard.arcana.slice(1)}`}
                 </span>
 
-                <h2 className="text-[1.7rem] font-bold italic font-playfair mb-0.5">{selectedCard.name}</h2>
+                <h2 className="text-[1.7rem] font-bold italic font-playfair mb-0.5">{cardName(selectedCard)}</h2>
                 <p className="text-[11px] text-slate-500 font-cinzel uppercase tracking-widest mb-3">
                   {selectedCard.element} {selectedCard.planet ? `· ${selectedCard.planet}` : ""}
                 </p>
@@ -318,15 +333,15 @@ export default function LibraryPage() {
                   "{selectedCard.waiteQuote}"
                 </blockquote>
 
-                <h4 className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1 font-cinzel">Upright Meaning</h4>
-                <p className="text-xs leading-relaxed mb-2">{selectedCard.uprightMeaning}</p>
+                <h4 className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1 font-cinzel">{t.card.uprightMeaning}</h4>
+                <p className="text-xs leading-relaxed mb-2">{cardMeaning(selectedCard)}</p>
 
-                <h4 className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1 font-cinzel">Reversed Meaning</h4>
-                <p className="text-xs leading-relaxed mb-3">{selectedCard.reversedMeaning}</p>
+                <h4 className="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1 font-cinzel">{t.card.reversedMeaning}</h4>
+                <p className="text-xs leading-relaxed mb-3">{cardReversed(selectedCard)}</p>
 
                 {/* Keywords */}
                 <div className="flex flex-wrap gap-1 mb-4">
-                  {selectedCard.keywords.map((k) => (
+                  {cardKeywords(selectedCard).map((k) => (
                     <span
                       key={k}
                       className="text-[10px] uppercase tracking-widest px-1.5 py-0.5 rounded font-cinzel"

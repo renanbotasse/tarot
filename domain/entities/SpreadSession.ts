@@ -5,7 +5,9 @@ export type SpreadType = "daily" | "three-card" | "pentagram" | "celtic-cross";
 export interface SpreadPosition {
   id: string;           // "situation", "obstacle", "past"
   label: string;        // display name
+  labelPt?: string;     // Portuguese display name
   description: string;  // subtitle / context hint
+  descriptionPt?: string; // Portuguese subtitle
   rotation?: number;    // for crossing card in Celtic Cross (90deg)
 }
 

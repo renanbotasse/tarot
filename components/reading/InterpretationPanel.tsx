@@ -6,6 +6,8 @@ import { TarotCard } from "@/lib/cards";
 import { SpreadPosition } from "@/lib/spreads";
 import { ChevronRight, Flame, Droplets, Wind, Mountain, Globe } from "lucide-react";
 import { SpreadType, getSpread } from "@/lib/spreads";
+import { useT } from "@/hooks/useT";
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 interface InterpretationPanelProps {
   card: TarotCard | null;
@@ -49,6 +51,18 @@ export default function InterpretationPanel({
   spreadType,
 }: InterpretationPanelProps) {
   const spreadConfig = getSpread(spreadType);
+  const t = useT();
+  const { lang } = useLanguageStore();
+
+  const cardName = lang === "pt" ? (card?.namePt ?? card?.name) : card?.name;
+  const cardMeaning = lang === "pt" ? (card?.uprightMeaningPt ?? card?.uprightMeaning) : card?.uprightMeaning;
+  const cardKeywords = lang === "pt" ? (card?.keywordsPt ?? card?.keywords) : card?.keywords;
+  const posLabel = lang === "pt" ? (position?.labelPt ?? position?.label) : position?.label;
+  const posDesc = lang === "pt" ? (position?.descriptionPt ?? position?.description) : position?.description;
+  const spreadLabel = lang === "pt" ? (spreadConfig?.labelPt ?? spreadConfig?.label) : spreadConfig?.label;
+  const spreadName = lang === "pt" ? (spreadConfig?.namePt ?? spreadConfig?.name) : spreadConfig?.name;
+  const spreadDesc = lang === "pt" ? (spreadConfig?.descriptionPt ?? spreadConfig?.description) : spreadConfig?.description;
+
   return (
     <aside
       className="w-[500px] flex-shrink-0 h-full flex flex-col relative z-40 border-l-4 overflow-hidden"
@@ -74,18 +88,18 @@ export default function InterpretationPanel({
           >
             <div className="mb-4 border-b-2 pb-4" style={{ borderBottomColor: "rgba(181,148,77,0.4)" }}>
               <p className="font-cinzel text-[11px] uppercase tracking-[0.3em] text-slate-500 mb-1">
-                {spreadConfig?.label}
+                {spreadLabel}
               </p>
               <h3 className="font-playfair text-2xl font-bold italic text-slate-700 mb-2">
-                {spreadConfig?.name}
+                {spreadName}
               </h3>
               <p className="font-fell italic text-sm text-slate-600 leading-relaxed">
-                {spreadConfig?.description}
+                {spreadDesc}
               </p>
             </div>
 
             <h4 className="font-cinzel text-[11px] uppercase tracking-[0.25em] text-slate-500 mb-3">
-              How to read
+              {t.reading.howToRead}
             </h4>
 
             <div className="flex flex-col gap-3">
@@ -99,10 +113,10 @@ export default function InterpretationPanel({
                   </span>
                   <div>
                     <span className="font-cinzel text-xs font-bold uppercase tracking-wider text-slate-700">
-                      {pos.label}
+                      {lang === "pt" ? (pos.labelPt ?? pos.label) : pos.label}
                     </span>
                     <span className="text-slate-500 font-fell text-sm ml-2 italic">
-                      — {pos.description}
+                      — {lang === "pt" ? (pos.descriptionPt ?? pos.description) : pos.description}
                     </span>
                   </div>
                 </div>
@@ -110,7 +124,7 @@ export default function InterpretationPanel({
             </div>
 
             <p className="mt-5 font-cinzel text-[11px] uppercase tracking-widest text-primary/70 text-center">
-              Click the glowing card to begin
+              {t.reading.clickToBegin}
             </p>
           </motion.div>
         ) : (
@@ -134,7 +148,7 @@ export default function InterpretationPanel({
                 </span>
                 <span style={{ color: "#b5944d" }}>·</span>
                 <span className="font-cinzel text-[13px] uppercase tracking-widest text-primary font-bold">
-                  {position.label}
+                  {posLabel}
                 </span>
                 <span style={{ color: "#b5944d" }}>·</span>
                 <span className="font-cinzel text-[13px] text-slate-400">
@@ -145,7 +159,7 @@ export default function InterpretationPanel({
 
             {/* Position description */}
             <p className="text-center text-slate-600 font-cinzel uppercase text-[13px] tracking-[0.2em] px-6 pb-3">
-              {position.description}
+              {posDesc}
             </p>
 
             {/* Card image thumb */}
@@ -161,7 +175,7 @@ export default function InterpretationPanel({
               >
                 <Image
                   src={card.image}
-                  alt={card.name}
+                  alt={cardName ?? card.name}
                   fill
                   className="object-cover"
                 />
@@ -175,7 +189,7 @@ export default function InterpretationPanel({
                   className="text-2xl font-bold italic border-b-2 pb-1 font-playfair flex-1"
                   style={{ borderBottomColor: "#d6700a" }}
                 >
-                  {card.name}
+                  {cardName}
                 </h3>
                 <span
                   className="ml-3 text-[13px] font-bold px-3 py-1 rounded-full font-cinzel uppercase tracking-wider"
@@ -185,7 +199,7 @@ export default function InterpretationPanel({
                     border: "1px solid #1a641a",
                   }}
                 >
-                  Upright
+                  {t.card.upright}
                 </span>
               </div>
 
@@ -199,16 +213,15 @@ export default function InterpretationPanel({
 
               {/* Interpretation */}
               <div className="space-y-2 font-sans leading-relaxed text-sm">
-                <p>{card.uprightMeaning}</p>
+                <p>{cardMeaning}</p>
                 <p className="text-slate-600">
-                  In the <span className="font-bold text-slate-800">{position.label}</span> position,{" "}
-                  this card speaks to <em>{position.description.toLowerCase()}</em>.
+                  {t.card.positionSentence(posLabel ?? position.label, posDesc ?? position.description)}
                 </p>
               </div>
 
               {/* Keywords */}
               <div className="flex flex-wrap gap-1.5">
-                {card.keywords.map((kw) => (
+                {(cardKeywords ?? card.keywords).map((kw) => (
                   <span
                     key={kw}
                     className="text-[13px] uppercase tracking-widest px-2 py-0.5 rounded font-cinzel"
@@ -226,12 +239,12 @@ export default function InterpretationPanel({
               {/* Symbology grid */}
               <section style={{ borderTop: "1px solid rgba(0,0,0,0.1)", paddingTop: "12px" }}>
                 <h4 className="text-[13px] uppercase font-bold tracking-widest text-slate-500 mb-2 font-cinzel">
-                  Correspondences
+                  {t.card.correspondences}
                 </h4>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex items-center gap-2">
                     <span className="text-primary">{ELEMENT_ICONS[card.element] ?? <Globe className="w-4 h-4" />}</span>
-                    <span className="text-sm font-bold">Element: {card.element}</span>
+                    <span className="text-sm font-bold">{t.card.element}: {card.element}</span>
                   </div>
                   {card.planet && (
                     <div className="flex items-center gap-2">
@@ -243,7 +256,7 @@ export default function InterpretationPanel({
                     <div className="flex items-center gap-2">
                       <span className="text-primary text-sm">📖</span>
                       <span className="text-sm font-bold">
-                        {card.arcana === "major" ? "Major Arcana" : card.arcana.charAt(0).toUpperCase() + card.arcana.slice(1)} {card.romanNumeral}
+                        {card.arcana === "major" ? t.card.majorArcana : card.arcana.charAt(0).toUpperCase() + card.arcana.slice(1)} {card.romanNumeral}
                       </span>
                     </div>
                   )}
@@ -261,9 +274,9 @@ export default function InterpretationPanel({
                 whileTap={{ scale: 0.98 }}
               >
                 {isComplete ? (
-                  <><span>✦</span> Back to Home — Rasputin's Eye Needs to Rest <span>✦</span></>
+                  <><span>✦</span> {t.reading.backHome} <span>✦</span></>
                 ) : (
-                  <>Reveal Next Card <ChevronRight className="w-4 h-4" /></>
+                  <>{t.reading.revealNext} <ChevronRight className="w-4 h-4" /></>
                 )}
               </motion.button>
             </footer>

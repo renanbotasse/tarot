@@ -2,12 +2,15 @@
 
 import { motion } from "framer-motion";
 import { Coins } from "lucide-react";
+import { useT } from "@/hooks/useT";
 
 interface InsertCoinButtonProps {
   onClick: () => void;
 }
 
 export default function InsertCoinButton({ onClick }: InsertCoinButtonProps) {
+  const t = useT();
+  const [line1, line2] = t.home.coinButton.split(" ");
   return (
     <motion.button
       onClick={onClick}
@@ -55,7 +58,7 @@ export default function InsertCoinButton({ onClick }: InsertCoinButtonProps) {
           <Coins className="text-primary/70 w-6 h-6" />
         </motion.div>
         <span className="font-cinzel font-black text-white/80 uppercase text-[11px] tracking-widest leading-none text-center">
-          Insert<br />Coin
+          {line1}<br />{line2}
         </span>
       </div>
     </motion.button>

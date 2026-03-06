@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, Lock, Clock } from "lucide-react";
 import Nav from "@/components/shared/Nav";
+import { useT } from "@/hooks/useT";
 
 function MarqueeLights({ inverted = false }: { inverted?: boolean }) {
   const count = 14;
@@ -38,13 +39,12 @@ function MarqueeLights({ inverted = false }: { inverted?: boolean }) {
   );
 }
 
-const TRUST_BADGES = [
-  { icon: ShieldCheck, label: "Secure Consultation" },
-  { icon: Lock, label: "Confidential Rite" },
-  { icon: Clock, label: "Ancient Tradition" },
-];
+const BADGE_ICONS = [ShieldCheck, Lock, Clock];
 
 export default function PremiumPage() {
+  const t = useT();
+  const TRUST_BADGES = t.premium.badges.map((label, i) => ({ icon: BADGE_ICONS[i], label }));
+
   return (
     <div
       className="relative flex min-h-screen w-full flex-col overflow-x-hidden"
@@ -84,7 +84,7 @@ export default function PremiumPage() {
                 ]}}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                Personalized Audio<br />Interpretations
+                {t.premium.hero}
               </motion.h1>
 
               <div className="w-32 h-0.5 my-3" style={{ background: "linear-gradient(to right, transparent, #ffbf00, transparent)" }} />
@@ -93,7 +93,7 @@ export default function PremiumPage() {
                 className="font-vintage tracking-[0.4em] text-base uppercase italic"
                 style={{ color: "#ffbf00", filter: "drop-shadow(0 0 4px rgba(255,191,0,0.4))" }}
               >
-                Professional Oracles • Ancient Wisdom
+                {t.premium.heroSub}
               </p>
             </div>
 
@@ -122,10 +122,10 @@ export default function PremiumPage() {
 
               <div className="text-center mb-7 relative z-10">
                 <h4 className="font-vintage text-primary-gold text-2xl uppercase tracking-[0.3em] mb-3">
-                  Master Reading
+                  {t.premium.masterReading}
                 </h4>
                 <p className="text-slate-200 text-sm font-fell italic max-w-xs mx-auto leading-relaxed">
-                  "Ancient secrets await those who seek the counsel of the cards — a reading forged in shadow and gold."
+                  "{t.premium.masterDesc}"
                 </p>
               </div>
 
@@ -157,7 +157,7 @@ export default function PremiumPage() {
                     <div className="absolute inset-[5px]" style={{ border: "2px solid rgba(255,191,0,0.3)" }} />
                     <div className="flex flex-col items-center py-6 px-3 relative z-10">
                       <span className="font-vintage text-2xl leading-none mb-1 font-black" style={{ color: "#ffbf00" }}>
-                        THE ORACLE
+                        {t.premium.ticketLabel}
                       </span>
                       <div className="w-full h-0.5 my-2 opacity-80" style={{ background: "#ffbf00" }} />
                       <div
@@ -168,11 +168,11 @@ export default function PremiumPage() {
                         <div className="absolute inset-0 rounded-full border-dashed" style={{ transform: "scale(0.9)", border: "2px dashed rgba(255,191,0,0.3)" }} />
                       </div>
                       <div className="font-vintage text-base tracking-normal font-black text-center px-2" style={{ color: "#ffbf00" }}>
-                        REQUEST MASTER READING
+                        {t.premium.requestBtn}
                       </div>
                       <div className="w-full h-0.5 my-2 opacity-80" style={{ background: "#ffbf00" }} />
                       <span className="text-[10px] font-typewriter font-black uppercase tracking-[0.4em]" style={{ color: "rgba(255,191,0,0.7)" }}>
-                        VALID UNTIL MIDNIGHT
+                        {t.premium.validUntil}
                       </span>
                     </div>
                   </div>
@@ -180,7 +180,7 @@ export default function PremiumPage() {
               </motion.div>
 
               <p className="mt-6 font-vintage tracking-[0.4em] text-xs uppercase relative z-10" style={{ color: "#ffbf00" }}>
-                $49.99 · Per Consultation
+                {t.premium.price}
               </p>
             </motion.div>
 
@@ -201,17 +201,12 @@ export default function PremiumPage() {
 
               <div className="relative z-10">
                 <h4 className="font-vintage text-primary-gold text-2xl uppercase tracking-[0.3em] mb-1 text-center">
-                  What You Receive
+                  {t.premium.whatYouReceive}
                 </h4>
                 <div className="w-24 h-0.5 mx-auto mb-6" style={{ background: "linear-gradient(to right, transparent, #ffbf00, transparent)" }} />
 
                 <div className="flex flex-col gap-4">
-                  {[
-                    { icon: "✦", title: "15-Min Audio Reading", desc: "A private voice interpretation of every card in your spread, recorded by a master oracle." },
-                    { icon: "✦", title: "Full Spread Transcript", desc: "A written record of your reading delivered to your inbox — yours to keep forever." },
-                    { icon: "✦", title: "Personalized Guidance", desc: "Your cards read in the context of your question. No generic meanings — only truth." },
-                    { icon: "✦", title: "Priority Placement", desc: "Your request moves to the front of the queue. The spirits will not keep you waiting." },
-                  ].map((item, i) => (
+                  {t.premium.features.map((item, i) => (
                     <motion.div
                       key={i}
                       className="flex items-start gap-3"
@@ -219,7 +214,7 @@ export default function PremiumPage() {
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.5 + i * 0.1 }}
                     >
-                      <span className="text-sm mt-1 flex-shrink-0 font-bold" style={{ color: "#ffbf00" }}>{item.icon}</span>
+                      <span className="text-sm mt-1 flex-shrink-0 font-bold" style={{ color: "#ffbf00" }}>✦</span>
                       <div>
                         <p className="font-cinzel text-xs font-black uppercase tracking-widest mb-0.5" style={{ color: "#ffbf00" }}>
                           {item.title}
@@ -233,8 +228,8 @@ export default function PremiumPage() {
                 </div>
 
                 <div className="mt-6 pt-5 border-t border-primary-gold/20 flex items-baseline gap-2">
-                  <span className="font-vintage text-4xl" style={{ color: "#ffbf00" }}>$49.99</span>
-                  <span className="font-cinzel text-[10px] font-black uppercase tracking-widest text-slate-400">USD · Per Session</span>
+                  <span className="font-vintage text-4xl" style={{ color: "#ffbf00" }}>{t.premium.priceMain}</span>
+                  <span className="font-cinzel text-[10px] font-black uppercase tracking-widest text-slate-400">{t.premium.priceSub}</span>
                 </div>
               </div>
             </motion.div>

@@ -6,12 +6,19 @@ import Image from "next/image";
 import InsertCoinButton from "@/components/home/InsertCoinButton";
 import SpreadSelector from "@/components/home/SpreadSelector";
 import ShuffleOverlay from "@/components/home/ShuffleOverlay";
+import MobileHomePage from "@/components/mobile/MobileHomePage";
 import { SPREADS, SpreadConfig } from "@/lib/spreads";
 import { useSessionStore } from "@/store/useSessionStore";
 import Link from "next/link";
+import { useT } from "@/hooks/useT";
+import { useLanguageStore } from "@/store/useLanguageStore";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export default function HomePage() {
+  const isMobile = useIsMobile();
   const session = useSessionStore((s) => s.session);
+  const t = useT();
+  const { lang, setLang } = useLanguageStore();
   const [selectedSpread, setSelectedSpread] = useState<SpreadConfig | null>(null);
   const [showShuffle, setShowShuffle] = useState(false);
   const [showSpreads, setShowSpreads] = useState(false);
@@ -34,6 +41,8 @@ export default function HomePage() {
     if (pendingSpread) { openShuffle(pendingSpread); }
     setPendingSpread(null);
   };
+
+  if (isMobile) return <MobileHomePage />;
 
   return (
     <main
@@ -70,9 +79,9 @@ export default function HomePage() {
 
           <nav className="hidden md:flex items-center gap-8">
             {[
-              { href: "/reading", label: "Tarot Spreads" },
-              { href: "/library", label: "Library" },
-              { href: "/premium", label: "Premium" },
+              { href: "/reading", label: t.nav.spreads },
+              { href: "/library", label: t.nav.library },
+              { href: "/premium", label: t.nav.premium },
             ].map((l) => (
               <Link
                 key={l.href}
@@ -82,6 +91,23 @@ export default function HomePage() {
                 {l.label}
               </Link>
             ))}
+
+            {/* Language toggle */}
+            <div className="flex items-center gap-1 ml-2 border-l border-white/10 pl-4">
+              <button
+                onClick={() => setLang("en")}
+                className={`font-cinzel text-xs font-bold uppercase tracking-wider transition-colors ${lang === "en" ? "text-primary" : "text-slate-500 hover:text-slate-300"}`}
+              >
+                EN
+              </button>
+              <span className="text-slate-600 text-xs">|</span>
+              <button
+                onClick={() => setLang("pt")}
+                className={`font-cinzel text-xs font-bold uppercase tracking-wider transition-colors ${lang === "pt" ? "text-primary" : "text-slate-500 hover:text-slate-300"}`}
+              >
+                PT
+              </button>
+            </div>
           </nav>
         </header>
 
@@ -122,10 +148,10 @@ export default function HomePage() {
                 transition={{ delay: 0.3 }}
               >
                 <h2 className="font-playfair text-6xl font-black text-white leading-tight italic drop-shadow-lg">
-                  Reveal Your Destiny
+                  {t.home.headline}
                 </h2>
                 <p className="text-slate-300 text-lg font-fell italic" style={{ marginBottom: "10%" }}>
-                  Step inside and let the mechanical Rasputin see your future.
+                  {t.home.subtitle}
                 </p>
               </motion.div>
 
@@ -149,7 +175,7 @@ export default function HomePage() {
                       animate={{ opacity: 1 }}
                       className="text-primary font-cinzel text-sm uppercase tracking-widest font-bold"
                     >
-                      Choose your spread →
+                      {t.home.spreadHint}
                     </motion.p>
                   )}
                 </AnimatePresence>
@@ -214,7 +240,7 @@ export default function HomePage() {
           style={{ background: "#1a110a" }}
         >
           <p className="text-[12px] text-primary/60 uppercase tracking-[0.3em] font-cinzel font-bold">
-            Est. 1892 · Premium Mechanical Divination
+            {t.home.footer}
           </p>
         </footer>
       </div>
@@ -236,9 +262,9 @@ export default function HomePage() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.85, y: 30 }}
             >
-              <p className="font-playfair text-xl italic text-white mb-2">Reading in Progress</p>
+              <p className="font-playfair text-xl italic text-white mb-2">{t.home.modal.title}</p>
               <p className="text-slate-400 text-sm font-fell mb-6">
-                You have a reading in progress. Start a new one? Your current reading will be lost.
+                {t.home.modal.warning}
               </p>
               <div className="flex gap-3">
                 <button
@@ -246,14 +272,14 @@ export default function HomePage() {
                   className="flex-1 py-3 rounded-lg font-cinzel text-sm uppercase tracking-widest text-slate-300"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  Cancel
+                  {t.home.modal.cancel}
                 </button>
                 <button
                   onClick={confirmNewReading}
                   className="flex-1 py-3 rounded-lg font-cinzel font-bold text-sm uppercase tracking-widest text-black"
                   style={{ background: "linear-gradient(135deg, #ffd700 0%, #b8860b 100%)" }}
                 >
-                  New Reading
+                  {t.home.modal.newReading}
                 </button>
               </div>
             </motion.div>

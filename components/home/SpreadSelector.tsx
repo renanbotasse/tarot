@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { SPREADS, SpreadConfig } from "@/lib/spreads";
+import { useT } from "@/hooks/useT";
+import { useLanguageStore } from "@/store/useLanguageStore";
 
 const SPREAD_IMAGES: Record<string, string> = {
   "celtic-cross": "/cards/10-WheelOfFortune.png",
@@ -15,10 +17,13 @@ interface SpreadSelectorProps {
 }
 
 export default function SpreadSelector({ onSelect }: SpreadSelectorProps) {
+  const t = useT();
+  const { lang } = useLanguageStore();
+
   return (
     <div className="flex flex-col items-center gap-6 w-full">
       <h3 className="font-cinzel text-primary uppercase font-black tracking-[0.3em] text-sm text-center">
-        Choose Your Spread
+        {t.spreadSelector.title}
       </h3>
 
       <div className="flex gap-5 w-full justify-center">
@@ -42,7 +47,7 @@ export default function SpreadSelector({ onSelect }: SpreadSelectorProps) {
             <div className="absolute inset-0">
               <Image
                 src={SPREAD_IMAGES[spread.id]}
-                alt={spread.name}
+                alt={lang === "pt" ? spread.namePt : spread.name}
                 fill
                 className="object-cover object-top opacity-25 group-hover:opacity-45 transition-all duration-500 scale-110 group-hover:scale-100"
               />
@@ -55,13 +60,13 @@ export default function SpreadSelector({ onSelect }: SpreadSelectorProps) {
             {/* Content */}
             <div className="relative h-full flex flex-col justify-end px-5 pb-5 gap-1">
               <span className="text-white font-playfair font-bold text-xl drop-shadow-lg leading-tight">
-                {spread.name}
+                {lang === "pt" ? spread.namePt : spread.name}
               </span>
               <span className="text-primary text-[11px] uppercase font-bold tracking-widest font-cinzel">
-                {spread.label}
+                {lang === "pt" ? spread.labelPt : spread.label}
               </span>
               <span className="text-slate-400 text-[11px] leading-snug mt-0.5">
-                {spread.description}
+                {lang === "pt" ? spread.descriptionPt : spread.description}
               </span>
             </div>
 
